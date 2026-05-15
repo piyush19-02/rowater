@@ -1,16 +1,14 @@
 import { NavLink } from "react-router-dom";
-import { Home, Users, Truck, Plus } from "lucide-react";
+import { Home, Users, Truck, Plus, Briefcase } from "lucide-react";
 
 export default function Sidebar() {
   const menu = [
     { name: "Dashboard", path: "/", icon: <Home size={20} /> },
     { name: "Customers", path: "/customers", icon: <Users size={20} /> },
     { name: "Delivery", path: "/delivery", icon: <Truck size={20} /> },
-        { name: "Add Expense", path: "/expenses/add ", icon: <Plus size={20} /> },
-                { name: "Add order", path: "/add-order", icon: <Plus size={20} /> },
-
-
-    
+    { name: "Add Expense", path: "/expenses/add", icon: <Plus size={20} /> },
+    { name: "Add order", path: "/add-order", icon: <Plus size={20} /> },
+    { name: "Manager", path: "/manager", icon: <Briefcase size={20} /> },
   ];
 
   return (

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 import { ShoppingCart, Calendar, Wallet, Clock } from "lucide-react";
-import MonthlyCustomers from "../components/MonthlyCustomers";
-import Expenses from "../components/Expenses";
-import UpcomingOrders from "../components/UpcomingOrders";
+import MonthlyCustomers from "../../components/MonthlyCustomers";
+import Expenses from "../../components/Expenses";
+import UpcomingOrders from "../../components/UpcomingOrders";
 
 export default function Dashboard() {
   const [tab, setTab] = useState("retail");

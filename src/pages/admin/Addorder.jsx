@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../../components/Sidebar";
 import { useNavigate } from "react-router-dom";
 
 export default function AddUpcomingOrder() {
@@ -12,6 +12,8 @@ export default function AddUpcomingOrder() {
 
   const [jar, setJar] = useState(0);
   const [liter, setLiter] = useState(0);
+  const [extraCharge, setExtraCharge] = useState(0);
+  const [notes, setNotes] = useState("");
 
   const [date, setDate] = useState("");
   const [deliveryBoy, setDeliveryBoy] = useState("Piyush");
@@ -25,6 +27,10 @@ export default function AddUpcomingOrder() {
     setCustomers(data);
   }, []);
 
+  const baseAmount = jar * 60 + liter * 2;
+  const totalAmount = baseAmount + Number(extraCharge || 0);
+  const pendingAmount = totalAmount - Number(received || 0);
+
   const handleSave = () => {
     if (!date) return alert("Select date");
 
@@ -36,20 +42,23 @@ export default function AddUpcomingOrder() {
 
     const deliveries = JSON.parse(localStorage.getItem("deliveries")) || [];
 
-    const amount = jar * 60 + liter * 2;
-
     const newOrder = {
       id: Date.now(),
 
       customer_id: customer?.id || null,
       customerName: isGuest ? guestName : customer?.name,
       mobile: isGuest ? guestMobile : customer?.mobile,
+      orderType: isGuest ? "guest" : "customer",
+      isMonthly: false,
 
       jar,
       liter,
+      extraCharge: Number(extraCharge || 0),
+      notes,
 
-      amount,
+      amount: totalAmount,
       received: Number(received), // 🔥 advance added
+      pending: pendingAmount,
 
       date,
       time: "Upcoming",
@@ -61,6 +70,18 @@ export default function AddUpcomingOrder() {
       "deliveries",
       JSON.stringify([...deliveries, newOrder])
     );
+
+    alert("Guest order saved successfully.");
+    setJar(0);
+    setLiter(0);
+    setExtraCharge(0);
+    setNotes("");
+    setReceived(0);
+    setCustomer(null);
+    setGuestName("");
+    setGuestMobile("");
+    setDate("");
+    setDeliveryBoy("Piyush");
 
     // navigate("/upcoming");
   };
@@ -142,14 +163,39 @@ export default function AddUpcomingOrder() {
               placeholder="Jar"
               className="border p-2 rounded"
               value={jar}
-              onChange={(e) => setJar(e.target.value)}
+              onChange={(e) => setJar(Number(e.target.value))}
             />
             <input
               type="number"
               placeholder="Water (Liter)"
               className="border p-2 rounded"
               value={liter}
-              onChange={(e) => setLiter(e.target.value)}
+              onChange={(e) => setLiter(Number(e.target.value))}
+            />
+          </div>
+
+          {/* EXTRA CHARGE */}
+          <div>
+            <label className="text-sm text-gray-500">
+              Extra Charge
+            </label>
+            <input
+              type="number"
+              className="border p-2 w-full rounded"
+              value={extraCharge}
+              onChange={(e) => setExtraCharge(Number(e.target.value))}
+            />
+          </div>
+
+          <div>
+            <label className="text-sm text-gray-500">
+              Notes / Description
+            </label>
+            <textarea
+              className="border p-2 w-full rounded"
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              placeholder="Any additional order notes"
             />
           </div>
 
@@ -183,8 +229,28 @@ export default function AddUpcomingOrder() {
               type="number"
               className="border p-2 w-full rounded"
               value={received}
-              onChange={(e) => setReceived(e.target.value)}
+              onChange={(e) => setReceived(Number(e.target.value))}
             />
+          </div>
+
+          {/* SUMMARY */}
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-2">
+            <div className="flex justify-between text-sm text-slate-600">
+              <span>Base Amount</span>
+              <span>₹{baseAmount}</span>
+            </div>
+            <div className="flex justify-between text-sm text-slate-600">
+              <span>Extra Charge</span>
+              <span>₹{extraCharge || 0}</span>
+            </div>
+            <div className="flex justify-between text-base font-semibold">
+              <span>Total Amount</span>
+              <span>₹{totalAmount}</span>
+            </div>
+            <div className="flex justify-between text-base font-semibold text-red-600">
+              <span>Pending Amount</span>
+              <span>₹{pendingAmount < 0 ? 0 : pendingAmount}</span>
+            </div>
           </div>
 
           {/* SAVE */}

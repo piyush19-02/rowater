@@ -1,26 +1,24 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-
+import { upcomingOrders } from "../data/upcomingData";
 export default function UpcomingOrders() {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const deliveries = JSON.parse(localStorage.getItem("deliveries")) || [];
+useEffect(() => {
+  const today = new Date().toISOString().split("T")[0];
 
-    const today = new Date().toISOString().split("T")[0];
+  const upcoming = upcomingOrders
+    .filter((d) => d.date > today)
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .map((d, i) => ({
+      ...d,
+      orderNo: i + 1,
+    }));
 
-    const upcoming = deliveries
-      .filter((d) => d.date > today)
-      .sort((a, b) => new Date(a.date) - new Date(b.date))
-      .map((d, i) => ({
-        ...d,
-        orderNo: i + 1,
-      }));
-
-    setData(upcoming);
-  }, []);
+  setData(upcoming);
+}, []);
 
   return (
     <div className="flex">
@@ -85,7 +83,7 @@ export default function UpcomingOrders() {
                     <p className="font-semibold text-green-600">
                       ₹{received}
                     </p>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs font-semibold text-black-400">
                       / ₹{d.amount}
                     </p>
                   </div>
@@ -95,6 +93,11 @@ export default function UpcomingOrders() {
           )}
 
         </div>
+           <div className="text-center p-3">
+                <button
+                  onClick={() => setVisible(visible + 5)}
+                  className="px-4 py-1 bg-blue-600 text-white rounded-full" >Load More </button>
+              </div>
       </div>
     </div>
   );

@@ -1,3 +1,44 @@
+// ============ MANAGERS ============
+export const managers = [
+  {
+    id: "MGR001",
+    name: "Rajesh Kumar",
+    phone: "9876543210",
+    email: "rajesh@rowater.com",
+    password: "123456",
+    area: "North Zone",
+    status: "active",
+  },
+  {
+    id: "MGR002",
+    name: "Priya Singh",
+    phone: "9123456789",
+    email: "priya@rowater.com",
+    password: "123456",
+    area: "South Zone",
+    status: "active",
+  },
+  {
+    id: "MGR003",
+    name: "Vikram Patel",
+    phone: "8765432101",
+    email: "vikram@rowater.com",
+    password: "123456",
+    area: "East Zone",
+    status: "active",
+  },
+  {
+    id: "MGR004",
+    name: "Neha Verma",
+    phone: "7654321098",
+    email: "neha@rowater.com",
+    password: "123456",
+    area: "West Zone",
+    status: "active",
+  },
+];
+
+// ============ CUSTOMERS ============
 export const customers = [
   {
     id: "1",
@@ -5,6 +46,8 @@ export const customers = [
     mobile: "9876543210",
     shop: "Main Market",
     address: "Huzurganj Road",
+    jar: 5,
+    liter: 10,
   },
   {
     id: "2",
@@ -12,6 +55,35 @@ export const customers = [
     mobile: "9123456780",
     shop: "Bus Stand Area",
     address: "Near Bus Stand",
+    jar: 3,
+    liter: 15,
+  },
+  {
+    id: "3",
+    name: "Amit General Store",
+    mobile: "8765432109",
+    shop: "City Center",
+    address: "MG Road",
+    jar: 4,
+    liter: 8,
+  },
+  {
+    id: "4",
+    name: "Priya Supermarket",
+    mobile: "7654321098",
+    shop: "Residential Area",
+    address: "Sector 5",
+    jar: 6,
+    liter: 12,
+  },
+  {
+    id: "5",
+    name: "Vikram Provision Store",
+    mobile: "6543210987",
+    shop: "Market Complex",
+    address: "Block A",
+    jar: 2,
+    liter: 20,
   },
 ];
 

@@ -17,6 +17,8 @@ export default function Expenses() {
     let monthSum = 0;
 
     expenses.forEach((e) => {
+      if (!e.date) return; // 🔥 safety
+
       const eDate = new Date(e.date);
 
       if (e.date === today) {
@@ -28,7 +30,6 @@ export default function Expenses() {
       }
     });
 
-    // 🔥 latest first
     expenses.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     setTodayTotal(todaySum);
@@ -38,11 +39,9 @@ export default function Expenses() {
 
   return (
     <div className="flex">
-      {/* <Sidebar /> */}
-
       <div className="p-4 w-full bg-gray-100 min-h-screen">
 
-        {/* 🔥 CARDS */}
+        {/* CARDS */}
         <div className="grid grid-cols-2 gap-4 mb-4 text-center">
 
           <div className="bg-white p-4 rounded-xl shadow">
@@ -61,7 +60,7 @@ export default function Expenses() {
 
         </div>
 
-        {/* 🔥 TABLE */}
+        {/* TABLE */}
         <div className="bg-white rounded-xl shadow overflow-hidden">
 
           <div className="grid grid-cols-4 bg-gray-50 p-3 font-semibold text-sm">
@@ -84,14 +83,13 @@ export default function Expenses() {
                 >
                   <p>{e.date}</p>
                   <p>{e.description}</p>
-                  <p>{e.manager}</p>
+                  <p>{e.managerName}</p> {/* 🔥 FIX */}
                   <p className="text-red-600 font-semibold">
                     ₹{e.amount}
                   </p>
                 </div>
               ))}
 
-              {/* 🔥 ALWAYS SHOW BUTTON */}
               <div className="text-center p-3">
                 <button
                   onClick={() => setVisible(visible + 5)}
@@ -102,9 +100,7 @@ export default function Expenses() {
               </div>
             </>
           )}
-
         </div>
-
       </div>
     </div>
   );

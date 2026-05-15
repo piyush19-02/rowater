@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Sidebar from "../components/Sidebar";
-import { customers, deliveries } from "../data/demoData";
+import Sidebar from "../../components/Sidebar";
+import { customers, deliveries } from "../../data/demoData";
 
 export default function MonthlyCustomerDetails() {
   const { id } = useParams();

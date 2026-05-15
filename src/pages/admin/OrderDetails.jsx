@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../../components/Sidebar";
 
 export default function OrderDetails() {
   const { id } = useParams();
@@ -137,24 +137,22 @@ export default function OrderDetails() {
           </div>
 
           {/* EXTRA */}
-          {!isUpcoming && (
-            <div className="text-sm mb-4 space-y-1">
-              <div className="flex justify-between">
-                <span>Extra Charges</span>
-                <span>₹{order.extra || 0}</span>
-              </div>
-
-              <div className="flex justify-between">
-                <span>Description</span>
-                <span>{order.extraNote || "-"}</span>
-              </div>
-
-              <div className="flex justify-between text-green-600">
-                <span>Discount</span>
-                <span>-₹{order.discount || 0}</span>
-              </div>
+          <div className="text-sm mb-4 space-y-1">
+            <div className="flex justify-between">
+              <span>Extra Charges</span>
+              <span>₹{order.extraCharge ?? order.extra ?? 0}</span>
             </div>
-          )}
+
+            <div className="flex justify-between">
+              <span>Description</span>
+              <span>{order.notes || order.extraNote || "-"}</span>
+            </div>
+
+            <div className="flex justify-between text-green-600">
+              <span>Discount</span>
+              <span>-₹{order.discount || 0}</span>
+            </div>
+          </div>
 
           {/* TOTAL */}
           <div className="border-t pt-3 space-y-2">
