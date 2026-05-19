@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
-import { customers, deliveries } from "../../data/demoData";
+import { monthlyCustomers, deliveries } from "../../data/demoData";
 
 export default function MonthlyCustomerDetails() {
   const { id } = useParams();
@@ -14,7 +14,7 @@ export default function MonthlyCustomerDetails() {
   const [selectedRow, setSelectedRow] = useState(null);
 
   useEffect(() => {
-    const cust = customers.find((c) => c.id == id);
+    const cust = monthlyCustomers.find((c) => c.id == id);
     setCustomer(cust);
 
     const today = new Date();

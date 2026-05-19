@@ -39,12 +39,12 @@ export const managers = [
 ];
 
 // ============ CUSTOMERS ============
-export const customers = [
+export const  monthlyCustomers= [
   {
     id: "1",
     name: "Ramesh Kirana Store",
     mobile: "9876543210",
-    shop: "Main Market",
+    shop: "Main Market", //remove shop
     address: "Huzurganj Road",
     jar: 5,
     liter: 10,
@@ -84,6 +84,37 @@ export const customers = [
     address: "Block A",
     jar: 2,
     liter: 20,
+  },
+];
+export const expenses = [
+  {
+    id: 1,
+    amount: 2500,
+    description: "Diesel Expense",
+  },
+
+  {
+    id: 2,
+    amount: 1800,
+    description: "Jar Repair",
+  },
+
+  {
+    id: 3,
+    amount: 3200,
+    description: "Staff Payment",
+  },
+
+  {
+    id: 4,
+    amount: 1500,
+    description: "Vehicle Service",
+  },
+
+  {
+    id: 5,
+    amount: 5000,
+    description: "Water Plant Maintenance",
   },
 ];
 

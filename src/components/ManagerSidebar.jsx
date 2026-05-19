@@ -1,80 +1,99 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import { LayoutDashboard, Users, ClipboardList, DollarSign, ArrowLeft, Shield, LogOut, User, Truck } from "lucide-react";
-import { useManager } from "../context/ManagerContext";
+// ManagerSidebar.jsx
+
+import React from "react";
+import {
+  LayoutDashboard,
+  Users,
+  LogOut,
+} from "lucide-react";
 
 export default function ManagerSidebar() {
-  const navigate = useNavigate();
-  const { currentManager, logoutManager } = useManager();
-
-  const menu = [
-    { name: "Manager Home", path: "/manager", icon: <LayoutDashboard size={20} /> },
-    { name: "Daily Customers", path: "/manager/daily-customers", icon: <Users size={20} /> },
-    { name: "Daily Expense", path: "/manager/daily-expense", icon: <DollarSign size={20} /> },
-    { name: "Delivery", path: "/manager/delivery", icon: <Truck size={20} /> },
-    { name: "Bulk Orders", path: "/manager/bulk-order", icon: <ClipboardList size={20} /> },
-  ];
-
-  const handleLogout = () => {
-    logoutManager();
-    navigate("/manager/login");
-  };
-
   return (
-    <div className="hidden md:block w-60 h-screen bg-slate-900 text-white p-4 fixed flex flex-col">
-      <div>
-        <h2 className="text-xl font-bold mb-2">Manager Panel</h2>
+    <>
+      {/* ================= DESKTOP SIDEBAR ================= */}
+      <div className="hidden md:flex w-[240px] h-screen bg-blue-600 text-white p-5 flex-col">
         
-        {/* CURRENT MANAGER INFO */}
-        {currentManager && (
-          <div className="bg-slate-800 rounded-lg p-3 mb-6 border border-slate-700">
-            <div className="flex items-center gap-2 mb-2">
-              <User size={16} className="text-blue-400" />
-              <p className="text-xs font-semibold text-blue-300">LOGGED IN</p>
-            </div>
-            <p className="text-sm font-bold text-white mb-1">{currentManager.name}</p>
-            <p className="text-xs text-slate-400">{currentManager.area}</p>
-          </div>
-        )}
+        <h1 className="text-3xl font-bold mb-10">
+          RO Panel 💧
+        </h1>
 
-        {menu.map((item, index) => (
-          <NavLink
-            key={index}
-            to={item.path}
-            end={item.path === "/manager"}
-            className={({ isActive }) =>
-              `flex items-center gap-3 mb-3 p-3 rounded-xl transition ${
-                isActive ? "bg-white text-slate-900 font-semibold" : "bg-slate-800 hover:bg-slate-700"
-              }`
-            }
-          >
-            {item.icon}
-            <span>{item.name}</span>
-          </NavLink>
-        ))}
+        <div className="flex flex-col gap-3">
+
+          <MenuItem
+            icon={<LayoutDashboard size={20} />}
+            text="Dashboard"
+            active
+          />
+
+          <MenuItem
+            icon={<Users size={20} />}
+            text="Customer"
+          />
+
+          <MenuItem
+            icon={<LogOut size={20} />}
+            text="Logout"
+          />
+        </div>
       </div>
 
-      <div className="mt-auto space-y-2">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `flex items-center gap-3 mb-3 p-3 rounded-xl transition ${
-              isActive ? "bg-white text-slate-900 font-semibold" : "bg-slate-800 hover:bg-slate-700"
-            }`
-          }
-        >
-          <Shield size={20} />
-          <span>Admin Dashboard</span>
-        </NavLink>
+      {/* ================= MOBILE BOTTOM BAR ================= */}
+      <div className="md:hidden fixed bottom-0 left-0 w-full bg-blue-600 text-white flex justify-around items-center py-3 z-50 shadow-2xl rounded-t-3xl">
 
-        {/* LOGOUT BUTTON */}
-        <button
-          onClick={handleLogout}
-          className="w-full flex items-center gap-3 p-3 rounded-xl bg-red-600 hover:bg-red-700 transition font-semibold text-white"
-        >
-          <LogOut size={20} />
-          <span>Logout</span>
-        </button>
+        <BottomItem
+          icon={<LayoutDashboard size={22} />}
+          text="Home"
+          active
+        />
+
+        <BottomItem
+          icon={<Users size={22} />}
+          text="Customer"
+        />
+
+        <BottomItem
+          icon={<LogOut size={22} />}
+          text="Logout"
+        />
       </div>
-    </div>
+    </>
+  );
+}
+
+/* DESKTOP MENU */
+function MenuItem({ icon, text, active }) {
+  return (
+    <button
+      className={`
+        flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition
+        ${
+          active
+            ? "bg-white text-blue-600"
+            : "hover:bg-blue-500"
+        }
+      `}
+    >
+      {icon}
+      {text}
+    </button>
+  );
+}
+
+/* MOBILE MENU */
+function BottomItem({ icon, text, active }) {
+  return (
+    <button
+      className={`
+        flex flex-col items-center text-xs font-medium
+        ${
+          active
+            ? "text-yellow-300"
+            : "text-white"
+        }
+      `}
+    >
+      {icon}
+      <span className="mt-1">{text}</span>
+    </button>
   );
 }

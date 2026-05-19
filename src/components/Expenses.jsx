@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
-
+import { expenses } from "../data/demoData";
 export default function Expenses() {
   const [data, setData] = useState([]);
   const [todayTotal, setTodayTotal] = useState(0);

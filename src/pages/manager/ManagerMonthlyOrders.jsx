@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ManagerSidebar from "../../components/ManagerSidebar";
 import { useManager } from "../../context/ManagerContext";
-import { customers, deliveries } from "../../data/demoData";
+import { monthlyCustomers, deliveries } from "../../data/demoData";
 
 export default function ManagerMonthlyOrders() {
   const { currentManager } = useManager();

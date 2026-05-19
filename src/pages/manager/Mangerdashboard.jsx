@@ -1,153 +1,473 @@
-import { useMemo, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// ManagerDashboard.jsx
+
+import React, { useState } from "react";
+
 import ManagerSidebar from "../../components/ManagerSidebar";
-import { useManager } from "../../context/ManagerContext";
-import { customers } from "../../data/demoData";
-import { upcomingOrders } from "../../data/upcomingData";
+import MonthlyTab from "../../components/MonthlyTab";
+import ExpensesTab from "../../components/ExpenseTab";
+
+import UpcomingOrdersPage from "./UpcomingOrdersPage";
+import TodayOrdersPage from "./TodayOrdersPage";
 
 export default function ManagerDashboard() {
-  const navigate = useNavigate();
-  const { currentManager } = useManager();
-  const [deliveries, setDeliveries] = useState([]);
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const savedDeliveries = JSON.parse(localStorage.getItem("deliveries")) || [];
-    setDeliveries(savedDeliveries);
-  }, []);
+  const [activeTab, setActiveTab] =
+    useState("orders");
 
-  const { jar, water } = useMemo(() => {
-    const managerDeliveries = deliveries.filter(d => !d.managerId || d.managerId === currentManager?.id);
-    const todayOrders = managerDeliveries;
-    const jarCompleted = todayOrders.filter(d => d.jar > 0 && Number(d.received || 0) >= Number(d.amount || 0)).length;
-    const waterCompleted = todayOrders.filter(d => d.liter > 0 && Number(d.received || 0) >= Number(d.amount || 0)).length;
-    const jarQuantity = todayOrders.reduce((total, d) => total + Number(d.jar || 0), 0);
-    const waterQuantity = todayOrders.reduce((total, d) => total + Number(d.liter || 0), 0);
+  const [showUpcoming, setShowUpcoming] =
+    useState(false);
 
-    const futureJarPending = upcomingOrders.filter(d => d.jar > 0 && Number(d.received || 0) < Number(d.amount || 0)).length;
-    const futureWaterPending = upcomingOrders.filter(d => d.liter > 0 && Number(d.received || 0) < Number(d.amount || 0)).length;
+  const [showTodayOrders, setShowTodayOrders] =
+    useState(false);
 
-    return {
-      jar: {
-        orders: customers.length,
-        completed: jarCompleted,
-        pending: futureJarPending,
-        quantity: jarQuantity,
-      },
-      water: {
-        orders: customers.length,
-        completed: waterCompleted,
-        pending: futureWaterPending,
-        quantity: waterQuantity,
-      },
-    };
-  }, [deliveries, currentManager?.id]);
+  // ================= ALL ORDERS =================
+
+  const pendingOrders = [
+
+    {
+      id: 1,
+      date: "25-Apr-2026",
+      name: "Rohit Sharma",
+      mobile: "9999999999",
+      address: "Vijay Nagar Indore",
+      manager: "Hariom",
+      qty: "10 Jars",
+      pending: 500,
+      total: 1200,
+      completed: false,
+    },
+
+    {
+      id: 2,
+      date: "25-Apr-2026",
+      name: "Aman Verma",
+      mobile: "8888888888",
+      address: "Bhawarkua Indore",
+      manager: "Hariom",
+      qty: "200 Ltr",
+      pending: 200,
+      total: 900,
+      completed: false,
+    },
+
+    {
+      id: 3,
+      date: "26-Apr-2026",
+      name: "Suresh",
+      mobile: "7777777777",
+      address: "Dewas",
+      manager: "Hariom",
+      qty: "5 Jars",
+      pending: 0,
+      total: 500,
+      completed: true,
+    },
+  ];
+
+  // ================= TODAY FILTER =================
+
+  const today = "25-Apr-2026";
+
+  const todayOrders =
+    pendingOrders.filter(
+      (item) =>
+        item.date === today
+    );
+
+  // ================= PAGE OPEN =================
+
+  if (showTodayOrders) {
+    return (
+      <TodayOrdersPage
+        orders={todayOrders}
+        onBack={() =>
+          setShowTodayOrders(false)
+        }
+      />
+    );
+  }
+
+  if (showUpcoming) {
+    return (
+      <UpcomingOrdersPage
+        onBack={() =>
+          setShowUpcoming(false)
+        }
+      />
+    );
+  }
 
   return (
-    <div className="flex">
+    <div className="flex bg-gray-200 min-h-screen overflow-hidden">
+
+      {/* SIDEBAR */}
       <ManagerSidebar />
-      <div className="md:ml-60 p-4 md:p-6 w-full bg-slate-100 min-h-screen pb-20">
-        <h1 className="text-3xl font-bold mb-6">Manager Dashboard</h1>
 
-        {/* PENDING BOX */}
-        <div className="bg-white rounded-3xl shadow p-4 md:p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-4">Pending</h2>
-          
-          {/* TABLE STRUCTURE */}
-          <div className="overflow-x-auto">
-            <table className="w-full text-center">
-              <thead>
-                <tr className="border-b-2 border-slate-300">
-                  <th className="px-2 py-3 text-xs md:text-sm uppercase tracking-[0.1em] text-slate-600">Item</th>
-                  <th className="px-2 py-3 text-xs md:text-sm uppercase tracking-[0.1em] text-slate-600">Jar</th>
-                  <th className="px-2 py-3 text-xs md:text-sm uppercase tracking-[0.1em] text-slate-600">Water</th>
-                  <th className="px-2 py-3 text-xs md:text-sm uppercase tracking-[0.1em] text-slate-600">Add</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-slate-200 hover:bg-slate-50">
-                  <td className="px-2 py-3 text-xs md:text-sm font-semibold text-slate-700">Order</td>
-                  <td className="px-2 py-3">
-                    <div className="text-sm md:text-base text-slate-500">Completed / Customers</div>
-                    <div className="text-lg md:text-2xl font-bold text-blue-600">{jar.completed || 0} / {jar.orders || 0}</div>
-                  </td>
-                  <td className="px-2 py-3">
-                    <div className="text-sm md:text-base text-slate-500">Completed / Customers</div>
-                    <div className="text-lg md:text-2xl font-bold text-cyan-600">{water.completed || 0} / {water.orders || 0}</div>
-                  </td>
-                  <td className="px-2 py-3 align-middle" rowSpan="2">
-                    <button
-                      onClick={() => navigate("/manager/guest-order")}
-                      className="h-full min-h-[100px] w-full rounded-3xl bg-slate-900 text-white px-3 py-2 text-sm font-semibold hover:bg-slate-800 transition"
-                    >
-                      Add Guest Order
-                    </button>
-                  </td>
-                </tr>
-                <tr className="hover:bg-slate-50">
-                  <td className="px-2 py-3 text-xs md:text-sm font-semibold text-slate-700">Quantity</td>
-                  <td className="px-2 py-3">
-                    <div className="text-lg md:text-2xl font-bold text-blue-600">{jar.quantity || 0}</div>
-                  </td>
-                  <td className="px-2 py-3">
-                    <div className="text-lg md:text-2xl font-bold text-cyan-600">{water.quantity || 0}</div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      {/* MAIN */}
+      <div className="flex-1 p-3 md:p-6 pb-24 md:pb-6">
+
+        {/* ================= TOP TABS ================= */}
+
+        <div className="relative mb-8">
+
+          {/* FLOW LINE */}
+          {/* <div
+            className={`
+              absolute
+              left-2
+              right-2
+              top-[60px]
+              h-[12px]
+              rounded-full
+              transition-all
+              duration-500
+
+              ${
+                activeTab === "orders"
+                  ? "bg-blue-500"
+                  : activeTab === "monthly"
+                  ? "bg-cyan-500"
+                  : "bg-red-500"
+              }
+            `}
+          ></div> */}
+
+          {/* TAB BUTTONS */}
+          <div className="relative z-20 flex gap-2 pb-1 px-2 pt-2">
+
+            <TopBtn
+              text="Orders"
+              active={activeTab === "orders"}
+              color="blue"
+              onClick={() =>
+                setActiveTab("orders")
+              }
+            />
+
+            <TopBtn
+              text="Monthly"
+              active={activeTab === "monthly"}
+              color="cyan"
+              onClick={() =>
+                setActiveTab("monthly")
+              }
+            />
+
+            <TopBtn
+              text="Expenses"
+              active={activeTab === "expenses"}
+              color="red"
+              onClick={() =>
+                setActiveTab("expenses")
+              }
+            />
+
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
-          <div>
-            <h2 className="text-xl font-semibold">Guest Orders</h2>
-            <p className="text-sm text-slate-500">Open the guest order page for full details and a delivered tab.</p>
-          </div>
-          <button
-            onClick={() => navigate("/manager/guest-order")}
-            className="rounded-3xl bg-slate-900 text-white px-5 py-3 font-semibold hover:bg-slate-800 transition"
-          >
-            Open Guest Order Page
-          </button>
-        </div>
+        {/* ================= CONTENT ================= */}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
-            <div className="bg-slate-50 rounded-3xl p-6 shadow-sm">
-              <div className="flex flex-col gap-4">
-                <div>
-                  <p className="text-sm uppercase tracking-widest text-slate-500">Booking</p>
-                  <h3 className="text-2xl font-bold text-slate-900">Pending Bookings</h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="rounded-3xl border border-slate-200 p-5 cursor-pointer" onClick={() => navigate("/manager/future-bookings") }>
-                    <p className="text-sm text-slate-500">Water</p>
-                    <p className="mt-3 text-3xl font-bold text-cyan-600">{water.pending || 0}</p>
-                    <p className="mt-1 text-sm text-slate-500">Booking count</p>
-                  </div>
-                  <div className="rounded-3xl border border-slate-200 p-5 cursor-pointer" onClick={() => navigate("/manager/future-bookings") }>
-                    <p className="text-sm text-slate-500">Jar</p>
-                    <p className="mt-3 text-3xl font-bold text-blue-600">{jar.pending || 0}</p>
-                    <p className="mt-1 text-sm text-slate-500">Booking count</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-orange-500 rounded-3xl p-6 text-white shadow-sm flex flex-col justify-between">
-              <div>
-                <p className="text-sm uppercase tracking-widest text-orange-100">Add Expense</p>
-                <h3 className="mt-3 text-2xl font-bold">New Expense</h3>
-                <p className="mt-2 text-sm text-orange-100/90">Record your expense quickly and keep the dashboard updated.</p>
-              </div>
-              <button
-                onClick={() => navigate("/expenses/add")}
-                className="mt-6 inline-flex items-center justify-center rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-orange-600 hover:bg-slate-100"
+        <div
+          className={`
+            relative
+            z-10
+            p-3 md:p-5
+            rounded-[28px]
+            shadow-2xl
+            transition-all
+            duration-500
+
+            ${
+              activeTab === "orders"
+                ? "bg-blue-50"
+                : activeTab === "monthly"
+                ? "bg-cyan-50"
+                : "bg-red-50"
+            }
+          `}
+        >
+
+          {/* ================= ORDERS TAB ================= */}
+
+          {activeTab === "orders" && (
+
+            <div className="w-full bg-white rounded-3xl p-3 md:p-5 shadow-lg border border-blue-200">
+
+              {/* ================= TODAY ================= */}
+
+              <div
+                onClick={() =>
+                  setShowTodayOrders(true)
+                }
+                className="border-2 border-blue-600 rounded-2xl p-3 md:p-4 mb-5 bg-white cursor-pointer hover:shadow-xl hover:scale-[1.01] transition-all duration-200"
               >
-                Add Expense
-              </button>
-            </div>
-          </div>
-        </div>
 
+                <div className="flex justify-between items-center mb-4">
+
+                  <h2 className="text-blue-600 font-bold text-base md:text-lg">
+                    Today's Pending Orders
+                  </h2>
+
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm shadow">
+                    View
+                  </button>
+                </div>
+
+                {/* BOX */}
+                <div className="flex flex-col md:flex-row border border-gray-300 rounded-xl overflow-hidden">
+
+                  {/* LEFT */}
+                  <div className="flex-1 p-4 md:p-5 md:border-r border-gray-300">
+
+                    <h3 className="text-blue-600 font-semibold mb-5 text-lg">
+                      Jar Orders
+                    </h3>
+
+                    <Info
+                      text={`${todayOrders.filter((o) =>
+                        o.qty.includes("Jar")
+                      ).length} Orders`}
+                    />
+
+                    <Info
+                      text={`${todayOrders
+                        .filter((o) =>
+                          o.qty.includes("Jar")
+                        )
+                        .reduce(
+                          (sum, o) =>
+                            sum +
+                            parseInt(o.qty),
+                          0
+                        )} Jars`}
+                    />
+
+                    <Info
+                      text={`₹${todayOrders
+                        .filter((o) =>
+                          o.qty.includes("Jar")
+                        )
+                        .reduce(
+                          (sum, o) =>
+                            sum + o.total,
+                          0
+                        )} Total`}
+                    />
+
+                  </div>
+
+                  {/* RIGHT */}
+                  <div className="flex-1 p-4 md:p-5 border-t md:border-t-0 border-gray-300">
+
+                    <h3 className="text-cyan-500 font-semibold mb-5 text-lg">
+                      Water Orders
+                    </h3>
+
+                    <Info
+                      text={`${todayOrders.filter((o) =>
+                        o.qty.includes("Ltr")
+                      ).length} Orders`}
+                    />
+
+                    <Info
+                      text={`${todayOrders
+                        .filter((o) =>
+                          o.qty.includes("Ltr")
+                        )
+                        .reduce(
+                          (sum, o) =>
+                            sum +
+                            parseInt(o.qty),
+                          0
+                        )} Ltr`}
+                    />
+
+                    <Info
+                      text={`₹${todayOrders
+                        .filter((o) =>
+                          o.qty.includes("Ltr")
+                        )
+                        .reduce(
+                          (sum, o) =>
+                            sum + o.total,
+                          0
+                        )} Total`}
+                    />
+
+                  </div>
+
+                </div>
+              </div>
+
+              {/* ================= UPCOMING ================= */}
+
+              <div
+                onClick={() =>
+                  setShowUpcoming(true)
+                }
+                className="border-2 border-cyan-500 rounded-2xl p-3 md:p-4 bg-white cursor-pointer hover:shadow-xl hover:scale-[1.01] transition-all duration-200"
+              >
+
+                <h2 className="text-cyan-500 font-bold text-base md:text-lg mb-4">
+                  Upcoming Orders
+                </h2>
+
+                <div className="flex flex-col md:flex-row border border-gray-300 rounded-xl overflow-hidden">
+
+                  {/* LEFT */}
+                  <div className="flex-1 p-4 md:p-5 md:border-r border-gray-300">
+
+                    <h3 className="text-blue-600 font-semibold mb-5 text-lg">
+                      Jar Orders
+                    </h3>
+
+                    <Info text="20 Orders" />
+                    <Info text="80 Jars" />
+                    <Info text="Rs. 7000" />
+
+                  </div>
+
+                  {/* RIGHT */}
+                  <div className="flex-1 p-4 md:p-5 border-t md:border-t-0 border-gray-300">
+
+                    <h3 className="text-cyan-500 font-semibold mb-5 text-lg">
+                      Water Orders
+                    </h3>
+
+                    <Info text="30 Orders" />
+                    <Info text="8000 Ltr water" />
+                    <Info text="Rs. 30000" />
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ================= MONTHLY ================= */}
+
+          {activeTab === "monthly" && (
+            <MonthlyTab />
+          )}
+
+          {/* ================= EXPENSES ================= */}
+
+          {activeTab === "expenses" && (
+            <ExpensesTab />
+          )}
+
+        </div>
       </div>
+    </div>
+  );
+}
+
+/* ================= TOP TAB BUTTON ================= */
+
+function TopBtn({
+  text,
+  active,
+  onClick,
+  color,
+}) {
+
+  const activeColor =
+    color === "blue"
+      ? "from-blue-600 to-blue-400 border-blue-700"
+      : color === "cyan"
+      ? "from-cyan-600 to-cyan-400 border-cyan-700"
+      : "from-red-600 to-red-400 border-red-700";
+
+  const arrowColor =
+    color === "blue"
+      ? "border-t-blue-500"
+      : color === "cyan"
+      ? "border-t-cyan-500"
+      : "border-t-red-500";
+
+  return (
+    <button
+      onClick={onClick}
+      className={`
+        relative
+        min-w-[110px]
+        px-5
+        py-3
+        rounded-t-2xl
+        font-bold
+        text-sm md:text-base
+        transition-all
+        duration-300
+        overflow-visible
+        border-2
+
+        ${
+          active
+            ? `
+              text-white
+              scale-[1.04]
+              shadow-xl
+              ${activeColor}
+            `
+            : `
+              bg-white
+              text-gray-700
+              border-gray-300
+              hover:bg-gray-100
+            `
+        }
+      `}
+    >
+
+      {/* ACTIVE BG */}
+      {active && (
+        <>
+          <div
+            className={`
+              absolute
+              inset-0
+              rounded-t-2xl
+              bg-gradient-to-r
+              ${activeColor}
+            `}
+          ></div>
+
+          {/* ARROW */}
+          <div
+            className={`
+              absolute
+              left-1/2
+              -translate-x-1/2
+              top-full
+              w-0
+              h-0
+              border-l-[16px]
+              border-r-[16px]
+              border-t-[16px]
+              border-l-transparent
+              border-r-transparent
+              ${arrowColor}
+            `}
+          ></div>
+        </>
+      )}
+
+      {/* TEXT */}
+      <span className="relative z-10">
+        {text}
+      </span>
+
+    </button>
+  );
+}
+
+/* ================= INFO ================= */
+
+function Info({ text }) {
+  return (
+    <div className="mb-4 text-gray-700 font-medium text-sm md:text-base">
+      {text}
+    </div>
   );
 }

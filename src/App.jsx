@@ -18,7 +18,7 @@ import DailyCoustumer from "./pages/manager/Dailycoustumer";
 import DailyExpense from "./pages/manager/Dailyexpense";
 import ManagerMonthlyOrders from "./pages/manager/ManagerMonthlyOrders";
 import GuestOrder from "./pages/manager/GuestOrder";
-import FutureBookings from "./pages/manager/FutureBookings";
+// import FutureBookings from "./pages/manager/FutureBookings";
 import ManagerDelivery from "./pages/manager/ManagerDelivery";
 
 // Protected Route Component
@@ -99,7 +99,7 @@ export default function App() {
           path="/manager/future-bookings" 
           element={
             <ProtectedRoute>
-              <FutureBookings />
+              <UpcomingOrders/>
             </ProtectedRoute>
           } 
         />

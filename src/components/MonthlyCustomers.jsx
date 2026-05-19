@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // ✅ SAME SOURCE EVERYWHERE
-import { customers, deliveries } from "../data/demoData";
+import {  deliveries, monthlyCustomers } from "../data/demoData";
 
 export default function MonthlyCustomers() {
   const [data, setData] = useState([]);
@@ -11,7 +11,7 @@ export default function MonthlyCustomers() {
   useEffect(() => {
     const today = new Date();
 
-    const result = customers.map((c) => {
+    const result = monthlyCustomers.map((c) => {
       let total = 0;
       let received = 0;
 
