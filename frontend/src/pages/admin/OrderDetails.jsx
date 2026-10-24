@@ -12,7 +12,7 @@ export default function OrderDetails() {
     setOrder(found);
   }, [id]);
 
-  if (!order) return <div className="p-5">Order not found</div>;
+  if (!order) return   <div className="min-h-screen bg-slate-100 p-5 text-slate-600">Order not found</div>;
 
   const today = new Date().toISOString().split("T")[0];
   const isUpcoming = order.date > today;
@@ -25,40 +25,41 @@ export default function OrderDetails() {
   };
 
   return (
-    <div className="flex">
+    <div className="flex min-h-screen bg-slate-100">
       <Sidebar />
 
-      <div className="md:ml-60 p-4 md:p-6 w-full bg-gray-100 min-h-screen pb-20">
+      <main className="min-h-screen w-full min-w-0 p-4 pb-24 sm:p-6 md:ml-60 md:p-8">
 
-        <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-lg p-6">
+        <div className="mx-auto max-w-2xl rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
 
           {/* HEADER */}
-          <div className="text-center border-b pb-4 mb-4">
-            <h1 className="text-xl font-bold">
+          <div className="mb-5 border-b border-slate-100 pb-4 text-center">
+            <p className="text-sm font-semibold text-blue-700">Order information</p>
+            <h1 className="mt-1 text-2xl font-bold text-slate-900">
               {isUpcoming ? "Upcoming Order" : "Order Details"}
             </h1>
-            <p className="text-xs text-gray-500">
+            <p className="mt-1 text-sm text-slate-500">
               {isUpcoming ? "Scheduled Delivery" : "Order Invoice"}
             </p>
           </div>
 
           {/* CUSTOMER */}
-          <div className="mb-4 flex justify-between items-center">
+          <div className="mb-5 flex flex-col gap-4 border-b border-slate-100 pb-5 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <p className="font-semibold text-lg">
+              <p className="font-semibold text-lg text-slate-900">
                 {order.customerName || "Guest"}
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-slate-500">
                 📞 {order.mobile || "N/A"}
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="break-words text-sm text-slate-500">
                 📍 {order.address || "N/A"}
               </p>
             </div>
 
             {/* 🔥 STATUS */}
             <span
-              className={`px-4 py-1 rounded-full text-sm ${
+              className={`w-fit rounded-full px-3 py-1.5 text-sm font-semibold ${
                 isUpcoming
                   ? "bg-blue-100 text-blue-600"
                   : pending > 0
@@ -71,9 +72,9 @@ export default function OrderDetails() {
           </div>
 
           {/* DATE */}
-          <div className="grid grid-cols-2 gap-2 text-sm mb-4">
+          <div className="mb-5 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 gap-y-2 text-sm">
             <p>Delivery Date</p>
-            <p className="text-right">{order.date}</p>
+            <p className="text-right font-medium text-slate-800">{order.date}</p>
 
             {!isUpcoming && (
               <>
@@ -91,20 +92,20 @@ export default function OrderDetails() {
           </div>
 
           {/* DELIVERY INFO */}
-          <div className="grid grid-cols-2 gap-2 text-sm mb-4">
+          <div className="mb-5 grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 gap-y-2 text-sm">
 
             <p>Manager</p>
-            <p className="text-right">
+            <p className="text-right font-medium text-slate-800">
               {order.managerName || order.deliveryBoy || "Admin"}
             </p>
 
             <p>Driver</p>
-            <p className="text-right">
+            <p className="text-right font-medium text-slate-800">
               {order.driverName || "Piyush"}
             </p>
 
             <p>Method</p>
-            <p className="text-right">
+            <p className="text-right font-medium text-slate-800">
               {order.deliveryMethod === "self"
                 ? "🚚 Self Delivery"
                 : "🏪 Walk-in"}
@@ -113,13 +114,13 @@ export default function OrderDetails() {
             {order.deliveryMethod === "self" && order.vehicleNo && (
               <>
                 <p>Vehicle No</p>
-                <p className="text-right">{order.vehicleNo}</p>
+                <p className="text-right font-medium text-slate-800">{order.vehicleNo}</p>
               </>
             )}
           </div>
 
           {/* ITEMS */}
-          <div className="border-t border-b py-3 mb-4 text-sm">
+          <div className="mb-5 border-y border-slate-100 py-4 text-sm">
             <div className="flex justify-between mb-1">
               <span>🧊 Jar ({order.jar || 0})</span>
               <span>₹{(order.jar || 0) * 60}</span>
@@ -137,7 +138,7 @@ export default function OrderDetails() {
           </div>
 
           {/* EXTRA */}
-          <div className="text-sm mb-4 space-y-1">
+          <div className="mb-5 space-y-2 text-sm">
             <div className="flex justify-between">
               <span>Extra Charges</span>
               <span>₹{order.extraCharge ?? order.extra ?? 0}</span>
@@ -148,21 +149,21 @@ export default function OrderDetails() {
               <span>{order.notes || order.extraNote || "-"}</span>
             </div>
 
-            <div className="flex justify-between text-green-600">
+            <div className="flex justify-between text-emerald-700">
               <span>Discount</span>
               <span>-₹{order.discount || 0}</span>
             </div>
           </div>
 
           {/* TOTAL */}
-          <div className="border-t pt-3 space-y-2">
+          <div className="space-y-2 border-t border-slate-100 pt-4">
 
             <div className="flex justify-between text-lg font-bold">
               <span>Total</span>
               <span>₹{order.amount}</span>
             </div>
 
-            <div className="flex justify-between text-green-600">
+            <div className="flex justify-between text-emerald-700">
               <span>Received</span>
               <span>₹{order.received || 0}</span>
             </div>
@@ -176,12 +177,12 @@ export default function OrderDetails() {
           </div>
 
           {/* NOTES */}
-          <div className="mt-4 border-t pt-3">
-            <p className="text-sm font-semibold mb-1">Notes</p>
-            <p className="text-sm text-gray-600">
+          <div className="mt-5 border-t border-slate-100 pt-4">
+            <p className="mb-1 text-sm font-semibold text-slate-900">Notes</p>
+            <p className="break-words text-sm text-slate-600">
               {order.notes || "-"}
             </p>
-          </div>
+          </main>
 
         </div>
       </div>

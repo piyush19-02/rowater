@@ -130,37 +130,44 @@ export default function MonthlyCustomerDetails() {
     <div className="flex">
       <Sidebar />
 
-      <div className="md:ml-60 p-4 w-full bg-gray-100 min-h-screen">
+      <main className="min-h-screen w-full min-w-0 p-4 pb-24 sm:p-6 md:ml-60 md:p-8">
 
         {/* PROFILE */}
-        <div className="bg-white p-5 rounded-xl shadow mb-4">
-          <h2 className="font-bold text-lg">{customer?.name}</h2>
+        <section className="mb-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <p className="text-sm font-semibold text-blue-700">Monthly customer account</p>
+          <h1 className="mt-1 text-2xl font-bold text-slate-900">{customer?.name || "Customer details"}</h1>
 
-          <p className="text-sm text-gray-600">
+          <p className="mt-2 text-sm text-slate-600">
             📞 {customer?.mobile}
           </p>
 
-          <p className="text-sm text-gray-500">
+          <p className="mt-1 text-sm text-slate-500">
             📍 {customer?.shop} - {customer?.address}
           </p>
 
-          <div className="mt-3 border-t pt-3 text-sm space-y-1">
+          <div className="mt-4 grid gap-3 border-t border-slate-100 pt-4 text-sm sm:grid-cols-2">
             <div className="flex justify-between">
-              <span className="text-gray-400">Last Payment Date</span>
-              <span>{lastPayment?.date || "-"}</span>
+              <span className="text-slate-500">Last payment date</span>
+              <span className="font-medium">{lastPayment?.date || "-"}</span>
             </div>
 
             <div className="flex justify-between">
-              <span className="text-gray-400">Last Payment</span>
-              <span className="text-blue-600">{daysAgo}</span>
+              <span className="text-slate-500">Last payment</span>
+              <span className="font-medium text-blue-700">{daysAgo}</span>
             </div>
           </div>
-        </div>
+        </section>
+
+        <header className="mb-3">
+          <h2 className="text-lg font-bold text-slate-900">Account ledger</h2>
+          <p className="mt-1 text-sm text-slate-500">Daily deliveries, payments, and running balance.</p>
+        </header>
 
         {/* TABLE */}
-        <div className="bg-white rounded-xl shadow overflow-hidden">
+        <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <div className="overflow-x-auto">
 
-          <div className="grid grid-cols-6 bg-gray-50 p-3 font-semibold text-sm">
+          <div className="grid min-w-[720px] grid-cols-5 bg-slate-50 p-3 text-sm font-semibold text-slate-600">
             <p>Date</p>
             <p>Manager</p>
             {/* <p>Vehicle</p> */}
@@ -173,27 +180,27 @@ export default function MonthlyCustomerDetails() {
             <div
               key={i}
               onClick={() => setSelectedRow(r)}
-              className="grid grid-cols-6 p-3 border-t text-sm cursor-pointer hover:bg-gray-100"
+              className="grid min-w-[720px] grid-cols-5 cursor-pointer border-t border-slate-100 p-3 text-sm text-slate-700 hover:bg-blue-50"
             >
               <p>{r.date}</p>
               <p>{r.manager}</p>
               {/* <p>{r.vehicle}</p> */}
 
-              <p><span className="text-green-600 font-semibold">₹{r.received}</span> / <span className="font-semibold">  ₹{r.amount}</span></p>
+              <p><span className="font-semibold text-emerald-700">₹{r.received}</span> / <span className="font-semibold">₹{r.amount}</span></p>
 
               <p>{r.amount === 0 ? "0" : `₹${r.amount}`}</p>
 
-              <p className={r.pending > 0 ? "text-red-600 font-semibold" : "text-green-600"}>
+              <p className={r.pending > 0 ? "font-semibold text-red-700" : "font-semibold text-emerald-700"}>
                 ₹{r.pending}
               </p>
             </div>
           ))}
 
           {/* TOGGLE */}
-          <div className="text-center p-3">
+          <div className="min-w-[720px] border-t border-slate-100 p-3 text-center">
             <button
               onClick={() => setShowOld(!showOld)}
-              className="text-blue-600 font-semibold"
+              className="rounded-lg px-4 py-2 text-sm font-semibold text-blue-700 hover:bg-blue-50"
             >
               {showOld ? "Hide Previous" : "Show Previous Month"}
             </button>
@@ -201,7 +208,7 @@ export default function MonthlyCustomerDetails() {
 
           {showOld &&
             oldRows.map((r, i) => (
-              <div key={i} className="grid grid-cols-6 p-3 border-t text-sm bg-gray-50">
+              <div key={i} className="grid min-w-[720px] grid-cols-5 border-t border-slate-100 bg-slate-50 p-3 text-sm">
                 <p>{r.date}</p>
                 <p>{r.manager}</p>
                 {/* <p>{r.vehicle}</p> */}
@@ -210,12 +217,13 @@ export default function MonthlyCustomerDetails() {
                 <p className="text-gray-600">₹{r.pending}</p>
               </div>
             ))}
-        </div>
+          </div>
+        </section>
 
         {/* 🔥 POPUP */}
         {selectedRow && (
-          <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-            <div className="bg-white p-6 rounded-xl w-80 shadow-lg">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/40 p-4">
+            <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-5 shadow-xl sm:p-6">
 
               <h2 className="text-lg font-bold mb-3">Order Detail</h2>
 
@@ -230,11 +238,11 @@ export default function MonthlyCustomerDetails() {
 
               <button
                 onClick={() => setSelectedRow(null)}
-                className="mt-4 w-full bg-red-500 text-white py-2 rounded"
+                className="mt-5 w-full rounded-xl bg-blue-600 py-3 font-semibold text-white hover:bg-blue-700"
               >
                 Close
               </button>
-            </div>
+            </main>
           </div>
         )}
       </div>

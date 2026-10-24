@@ -42,63 +42,62 @@ export default function CustomerDetails() {
   }, [id]);
 
   return (
-    <div className="flex">
+    <div className="flex min-h-screen bg-slate-100">
       <Sidebar />
 
-      <div className="md:ml-60 p-4 md:p-6 w-full bg-gray-100 min-h-screen pb-20">
+      <main className="min-h-screen w-full min-w-0 p-4 pb-24 sm:p-6 md:ml-60 md:p-8">
 
         {/* 🔥 CUSTOMER PROFILE */}
-        <div className="bg-white p-6 rounded-2xl shadow mb-5">
+        <section className="mb-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
 
-          <h2 className="text-xl font-semibold mb-4">
-            Customer Profile 👤
-          </h2>
+          <p className="text-sm font-semibold text-blue-700">Customer account</p>
+          <h1 className="mb-4 mt-1 text-2xl font-bold text-slate-900">Customer profile</h1>
 
           {customer ? (
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
 
               <div>
-                <p className="text-gray-400 text-sm">Name</p>
+                <p className="text-sm text-slate-500">Name</p>
                 <p className="font-semibold">{customer.name}</p>
               </div>
 
               <div>
-                <p className="text-gray-400 text-sm">Mobile</p>
+                <p className="text-sm text-slate-500">Mobile</p>
                 <p className="font-semibold">{customer.mobile}</p>
               </div>
 
               <div>
-                <p className="text-gray-400 text-sm">Address</p>
+                <p className="text-sm text-slate-500">Address</p>
                 <p className="font-semibold">{customer.address}</p>
               </div>
 
             </div>
           ) : (
-            <p className="text-gray-400">Customer not found</p>
+            <p className="text-slate-500">Customer not found</p>
           )}
 
-        </div>
+        </section>
 
         {/* 🔥 SUMMARY */}
-        <div className="grid grid-cols-3 gap-4 mb-5 text-center">
+        <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
 
-          <div className="bg-white p-4 rounded-xl shadow">
-            <p className="text-sm text-gray-400">Total</p>
-            <p className="text-xl font-bold text-blue-600">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <p className="text-sm text-slate-500">Total</p>
+            <p className="mt-1 text-xl font-bold text-blue-700">
               ₹{total}
             </p>
           </div>
 
-          <div className="bg-white p-4 rounded-xl shadow">
-            <p className="text-sm text-gray-400">Received</p>
-            <p className="text-xl font-bold text-green-600">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <p className="text-sm text-slate-500">Received</p>
+            <p className="mt-1 text-xl font-bold text-emerald-700">
               ₹{received}
             </p>
           </div>
 
-          <div className="bg-white p-4 rounded-xl shadow">
-            <p className="text-sm text-gray-400">Pending</p>
-            <p className="text-xl font-bold text-red-600">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <p className="text-sm text-slate-500">Pending</p>
+            <p className="mt-1 text-xl font-bold text-red-700">
               ₹{total - received}
             </p>
           </div>
@@ -106,39 +105,37 @@ export default function CustomerDetails() {
         </div>
 
         {/* 🔥 HISTORY */}
-        <div className="bg-white p-6 rounded-2xl shadow">
+        <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
 
-          <h2 className="text-lg font-semibold mb-4">
-            Delivery History 📦
-          </h2>
+          <h2 className="mb-4 text-lg font-bold text-slate-900">Delivery history</h2>
 
           {data.length === 0 ? (
-            <p className="text-gray-400 text-center">
+            <p className="rounded-xl bg-slate-50 p-8 text-center text-slate-500">
               No history found
             </p>
           ) : (
             data.map((d, i) => (
               <div
                 key={i}
-                className="border-b py-3 flex justify-between items-center"
+                className="flex flex-col gap-2 border-b border-slate-100 py-3 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div>
                   <p className="font-medium">
                     Jar: {d.jar} | Return: {d.jar_return || 0}
                   </p>
-                  <p className="text-xs text-gray-500">{d.date}</p>
+                  <p className="text-xs text-slate-500">{d.date}</p>
                 </div>
 
-                <p className="font-bold text-blue-600">
+                <p className="font-bold text-blue-700">
                   ₹{d.amount}
                 </p>
               </div>
             ))
           )}
 
-        </div>
+        </section>
 
-      </div>
+      </main>
     </div>
   );
 }

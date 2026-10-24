@@ -27,19 +27,23 @@ export default function WaterDetails() {
       : data;
 
   return (
-    <div className="flex">
+    <div className="flex min-h-screen bg-slate-100">
       <Sidebar />
 
-      <div className="md:ml-60 p-4 md:p-6 w-full bg-gray-100 min-h-screen pb-20">
+      <main className="min-h-screen w-full min-w-0 p-4 pb-24 sm:p-6 md:ml-60 md:p-8">
 
         {/* HEADER */}
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-bold">Water Details 💧</h2>
+        <header className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold text-blue-700">Admin overview</p>
+            <h1 className="mt-1 text-2xl font-bold text-slate-900">Water details</h1>
+            <p className="mt-1 text-sm text-slate-500">Review water sales and outstanding balances.</p>
+          </div>
 
           <select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="border p-2 rounded-lg"
+            className="input w-full sm:w-44"
           >
             <option value="all">All</option>
             <option value="pending">Pending</option>
@@ -47,25 +51,25 @@ export default function WaterDetails() {
         </div>
 
         {/* SUMMARY */}
-        <div className="grid grid-cols-3 gap-4 mb-5 text-center">
+        <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
 
-          <div className="bg-white p-4 rounded-xl shadow">
-            <p className="text-sm text-gray-400">Total</p>
-            <p className="text-xl font-bold text-blue-600">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <p className="text-sm text-slate-500">Total</p>
+            <p className="mt-1 text-xl font-bold text-blue-700">
               ₹{total}
             </p>
           </div>
 
-          <div className="bg-white p-4 rounded-xl shadow">
-            <p className="text-sm text-gray-400">Received</p>
-            <p className="text-xl font-bold text-green-600">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <p className="text-sm text-slate-500">Received</p>
+            <p className="mt-1 text-xl font-bold text-emerald-700">
               ₹{received}
             </p>
           </div>
 
-          <div className="bg-white p-4 rounded-xl shadow">
-            <p className="text-sm text-gray-400">Pending</p>
-            <p className="text-xl font-bold text-red-600">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <p className="text-sm text-slate-500">Pending</p>
+            <p className="mt-1 text-xl font-bold text-red-700">
               ₹{pending}
             </p>
           </div>
@@ -73,18 +77,17 @@ export default function WaterDetails() {
         </div>
 
         {/* TABLE HEADER */}
-        <div className="grid grid-cols-4 bg-blue-600 text-white p-3 rounded-xl text-sm font-semibold">
-          <p>Order</p>
-          <p>Delivery Boy</p>
-          <p>Customer</p>
-          <p className="text-right">Amount</p>
-        </div>
-
-        {/* LIST */}
-        <div className="bg-white rounded-xl shadow mt-2">
+        <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <div className="overflow-x-auto">
+            <div className="grid min-w-[600px] grid-cols-4 bg-slate-50 p-4 text-sm font-semibold text-slate-600">
+              <p>Order</p>
+              <p>Delivery Boy</p>
+              <p>Customer</p>
+              <p className="text-right">Amount</p>
+            </div>
 
           {filteredData.length === 0 ? (
-            <p className="p-4 text-center text-gray-400">
+            <p className="p-8 text-center text-slate-500">
               No data found
             </p>
           ) : (
@@ -92,7 +95,7 @@ export default function WaterDetails() {
               <div
                 key={i}
                 onClick={() => navigate(`/order/${d.id}`)} // 🔥 FIX
-                className="grid grid-cols-4 p-3 border-b items-center cursor-pointer hover:bg-gray-50"
+                className="grid min-w-[600px] grid-cols-4 items-center border-t border-slate-100 p-4 text-sm text-slate-700 transition hover:bg-blue-50"
               >
                 <p>#{i + 1}</p>
 
@@ -107,9 +110,10 @@ export default function WaterDetails() {
             ))
           )}
 
-        </div>
+          </div>
+        </section>
 
-      </div>
+      </main>
     </div>
   );
 }

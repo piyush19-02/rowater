@@ -5,7 +5,51 @@ use App\Models\PartyOrderModel;
 class PartyOrderController extends BaseController
 {
     public function index() { return $this->response->setJSON(['status' => true, 'data' => (new PartyOrderModel())->orderBy('event_date', 'ASC')->findAll()]); }
-    public function show($id) { $order = (new PartyOrderModel())->find($id); return $order ? $this->response->setJSON(['status' => true, 'data' => $order]) : $this->response->setStatusCode(404)->setJSON(['status' => false, 'message' => 'Order not found']); }
+    public function show($id)
+    {
+        $db = db_connect();
+        $model = new PartyOrderModel();
+        $order = $model->find($id);
+        if (!$order) {
+            return $this->response->setStatusCode(404)->setJSON(['status' => false, 'message' => 'Order not found']);
+        }
+
+        // Fetch deliveries for this party order with manager name
+        $deliveries = $db->table('deliveries')
+            ->select('deliveries.id, deliveries.delivery_no, deliveries.delivery_date, deliveries.delivered_jars, deliveries.returned_jars, deliveries.amount, deliveries.received_amount, deliveries.remarks, users.id AS manager_id, users.name AS manager_name')
+            ->join('users', 'users.id = deliveries.manager_id', 'left')
+            ->where('party_order_id', $id)
+            ->orderBy('delivery_date', 'ASC')
+            ->get()->getResultArray();
+
+        // Fetch payments for this party order with manager name
+        $payments = $db->table('payments')
+            ->select('payments.id, payments.payment_date, payments.amount, payments.payment_mode, payments.remarks, payments.received_by, users.name AS manager_name')
+            ->join('users', 'users.id = payments.received_by', 'left')
+            ->where('party_order_id', $id)
+            ->orderBy('payment_date', 'ASC')
+            ->get()->getResultArray();
+
+        // Fetch return history (may not have manager info)
+        $returns = [];
+        if ($db->tableExists('party_return_history')) {
+            $returns = $db->table('party_return_history')
+                ->select('id, return_date, returned_jars, remarks')
+                ->where('party_order_id', $id)
+                ->orderBy('return_date', 'ASC')
+                ->get()->getResultArray();
+        }
+
+        $receivedTotal = array_sum(array_map(static fn($p) => (float)$p['amount'], $payments));
+
+        return $this->response->setJSON(['status' => true, 'data' => [
+            'order' => $order,
+            'deliveries' => $deliveries,
+            'payments' => $payments,
+            'returns' => $returns,
+            'received_total' => $receivedTotal,
+        ]]);
+    }
     public function store()
     {
         $data = $this->request->getJSON(true) ?: [];

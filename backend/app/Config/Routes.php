@@ -22,12 +22,16 @@ $routes->post('login', 'Api\AuthController::login');
     $routes->get('deliveries/pending', 'Api\DeliveryController::pending');
     $routes->post('deliveries/settle', 'Api\DeliveryController::settle');
     $routes->get('customers', 'Api\CustomerController::index');
+    $routes->get('customers/(:num)/statement', 'Api\CustomerController::statement/$1');
     $routes->get('managers', 'Api\ManagerController::index');
+    $routes->post('managers', 'Api\ManagerController::store');
     $routes->get('dashboard/monthly', 'Api\DashboardController::monthly');
     $routes->post('customers', 'Api\CustomerController::store');
     $routes->get('expense-categories', 'Api\ExpenseCategoryController::index');
     $routes->post('expense-categories', 'Api\ExpenseCategoryController::store');
+    $routes->get('expenses', 'Api\ExpenseController::index');
     $routes->post('expenses', 'Api\ExpenseController::store');
+    $routes->get('payments', 'Api\PaymentController::index');
 
 
 

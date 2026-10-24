@@ -12,8 +12,15 @@ function blankForm(order = {}) {
   return {
     jar: order.jar ?? order.total_jars ?? 0,
     liter: order.liter ?? 0,
-    orderAmount: order.amount ?? order.total_amount ?? 0,
+    // Use pending amount for party order delivery by default, because advance already reduces current due.
+    orderAmount: order.pending_amount ?? order.pending ?? order.amount ?? order.total_amount ?? 0,
+    // Prefill per-delivery rate from the party order if available so the form shows expected amounts
+    rate: order.rate ?? order.rate_per_jar ?? order.rate_perjar ?? "",
+    // support both snake_case and camelCase fields from API
+    waterRate: order.water_rate ?? order.waterRate ?? "",
     returnedJars: 0,
+    // paymentAction: 'khata' | 'paid'
+    paymentAction: 'khata',
     receivedAmount: "",
     paymentMode: "cash",
     notes: "",
@@ -38,7 +45,23 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
     try {
       const [customerResult, partyResult, deliveryResult] = await Promise.all([api("/customers"), api("/party-orders"), api("/deliveries?type=regular")]);
       setCustomers((customerResult.data || []).map((item) => ({ ...item, shop: item.address, pendingAmount: item.pending_amount, outsideJars: item.outside_jars })));
-      setOrders((partyResult.data || []).map((item) => ({ ...item, customerName: item.customer_name, eventName: item.event_name, date: item.event_date, jar: item.total_jars, amount: item.total_amount, pending: item.pending_amount, pendingReturnJars: item.pending_return_jars, isParty: true })));
+      setOrders((partyResult.data || []).map((item) => ({
+  ...item,
+  customerName: item.customer_name,
+  eventName: item.event_name,
+  date: item.event_date,
+  jar: item.total_jars,
+  amount: item.total_amount,
+  pending: item.pending_amount,
+  pendingReturnJars: item.pending_return_jars,
+  isParty: true,
+  // normalize rate fields so delivery form can prefill and calculations can use either naming convention
+  rate: item.rate ?? item.rate_per_jar ?? "",
+  waterRate: item.water_rate ?? item.waterRate ?? "",
+  // ensure compatibility with code paths that expect snake_case
+  rate_per_jar: item.rate_per_jar ?? item.rate ?? 0,
+  water_rate: item.water_rate ?? item.waterRate ?? 0,
+})));
       setTodayDeliveries(deliveryResult.data || []);
     } catch (requestError) { setError(requestError.message); }
   };
@@ -79,10 +102,24 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
     const returnedJars = Math.max(0, Number(form.returnedJars) || 0);
     if (!jar && !liter) return window.alert("Jar ya water quantity enter karein.");
 
-    const amount = type === "party"
-      ? Number(item.amount || item.total_amount || jar * 60 + liter * 2)
-      : jar * Number(item.rate_per_jar || 60) + liter * 2;
-    const received = Math.min(amount, Math.max(0, Number(form.receivedAmount) || 0));
+    // compute effective rate: prefer per-delivery rate, else fallback to item rate (for regular customers)
+    const perDeliveryJarRate = Number(form.rate || 0);
+    const itemJarRate = Number(item?.rate_per_jar || 0);
+    const effectiveJarRate = perDeliveryJarRate > 0 ? perDeliveryJarRate : (itemJarRate > 0 ? itemJarRate : 0);
+    const perDeliveryWaterRate = Number(form.waterRate || 0);
+    const itemWaterRate = Number(item?.water_rate || 0);
+    const effectiveWaterRate = perDeliveryWaterRate > 0 ? perDeliveryWaterRate : (itemWaterRate > 0 ? itemWaterRate : 0);
+
+    const computedAmount = jar * effectiveJarRate + liter * effectiveWaterRate;
+    // chargedAmount: party orders should use the current rate if provided, otherwise fall back to the original order amount
+    const chargedAmountForSave = type === 'party'
+      ? (effectiveJarRate > 0 ? computedAmount : (Number(form.orderAmount) > 0 ? Number(form.orderAmount) : 0))
+      : (effectiveJarRate > 0 ? computedAmount : 0);
+
+    const amount = chargedAmountForSave > 0 ? chargedAmountForSave : 0;
+    const received = form.paymentAction === 'paid' ? Math.min(amount, Math.max(0, Number(form.receivedAmount) || 0)) : 0;
+    const paymentModeToSend = form.paymentAction === 'paid' ? form.paymentMode : (form.paymentAction === 'khata' ? 'khata' : 'credit');
+
     const entry = {
       id: Date.now(),
       deliveryDate: today(),
@@ -99,7 +136,7 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
       received,
       pendingAmount: amount - received,
       paymentStatus: received >= amount ? "paid" : "pending",
-      paymentMode: received ? form.paymentMode : "credit",
+      paymentMode: paymentModeToSend,
       notes: form.notes,
     };
     try {
@@ -119,8 +156,8 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
     const jarPending = party ? Number(item.pendingReturnJars || 0) : Number(item.outsideJars || 0);
     const accountPending = party ? Number(item.pending || item.pending_amount || 0) : Number(item.pendingAmount || 0);
 
-    return <article key={id} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-      <div className="flex gap-3 justify-between">
+    return <article key={id} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+      <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="font-bold text-slate-900 truncate">{party ? item.customerName : item.name}</p>
           <p className="mt-1 text-sm text-slate-500 truncate">{party ? `${item.eventName || "Special occasion"} · ${item.date || "Date pending"}` : `${item.shop || item.address || "Address not added"} · ${item.mobile || ""}`}</p>
@@ -141,16 +178,16 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
     </article>;
   };
 
-  return <div className="flex bg-slate-100">
+  return <div className="flex min-h-screen bg-slate-100">
     {React.createElement(SidebarComponent)}
-    <main className="min-h-screen w-full pb-24 md:ml-60 md:p-6 p-4">
+    <main className="min-h-screen w-full min-w-0 p-4 pb-24 sm:p-6 md:ml-60 md:p-8">
       <header className="mb-5">
         <p className="text-sm font-semibold text-blue-700">Delivery workspace</p>
-        <h1 className="text-2xl font-bold text-slate-900">Aaj ki delivery</h1>
+        <h1 className="mt-1 text-2xl font-bold text-slate-900">Aaj ki delivery</h1>
         <p className="mt-1 text-sm text-slate-500">Payment aur jar return delivery ke saath hi record karein.</p>
       </header>
       {error && <p className="mb-4 rounded-xl bg-red-50 p-3 text-sm text-red-700">{error}</p>}
-      <div className="mb-5 grid grid-cols-2 rounded-xl bg-slate-200 p-1">
+      <div className="mb-5 grid grid-cols-2 gap-1 rounded-xl bg-slate-200 p-1">
         <button onClick={() => { setActiveTab("regular"); setOpenId(null); }} className={`rounded-lg px-3 py-2 text-sm font-bold ${activeTab === "regular" ? "bg-white text-blue-700 shadow" : "text-slate-600"}`}>Delivery pending ({regularCustomers.length - completedCustomerIds.size})</button>
         <button onClick={() => { setActiveTab("party"); setOpenId(null); }} className={`rounded-lg px-3 py-2 text-sm font-bold ${activeTab === "party" ? "bg-white text-blue-700 shadow" : "text-slate-600"}`}>Party orders ({partyOrders.length})</button>
       </div>
@@ -167,19 +204,45 @@ function DeliveryForm({ form, setForm, party, requested, onSave, error }) {
   const update = (key, value) => setForm((previous) => ({ ...previous, [key]: value }));
   const jar = Number(form.jar || 0); const liter = Number(form.liter || 0);
   const received = Math.max(0, Number(form.receivedAmount) || 0);
-  const chargedAmount = party && Number(form.orderAmount) > 0 ? Number(form.orderAmount) : jar * 60 + liter * 2;
+  // Determine rates: use only per-delivery rate when provided. Do NOT fallback to any customer/party default rate (to avoid accidental cross-use).
+  const perDeliveryJarRate = Number(form.rate || 0);
+  const effectiveJarRate = perDeliveryJarRate > 0 ? perDeliveryJarRate : 0;
+  const waterRate = Number(form.waterRate || 0) || 0;
+  // chargedAmount: for party prefer explicit order amount, otherwise compute only when per-delivery rate exists
+  const computedAmount = jar * effectiveJarRate + liter * waterRate;
+  const chargedAmount = party
+    ? (effectiveJarRate > 0 ? computedAmount : (Number(form.orderAmount) > 0 ? Number(form.orderAmount) : 0))
+    : (effectiveJarRate > 0 ? computedAmount : 0);
   return <div className="mt-4 border-t border-slate-100 pt-4">
     {party && <p className="mb-3 rounded-xl bg-blue-50 p-3 text-sm text-blue-900"><CalendarDays className="mr-1 inline" size={16} /> Requested {requested.jar} jar / {requested.liter} L. Delivered quantity isse zyada bhi ho sakti hai.</p>}
-    <div className="grid grid-cols-2 gap-3">
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
       <Field label="Jar delivery" icon={<Package size={16} />}><input type="number" min="0" value={form.jar} onChange={(e) => update("jar", e.target.value)} className="input" /></Field>
       <Field label="Water delivery (L)" icon={<Droplets size={16} />}><input type="number" min="0" value={form.liter} onChange={(e) => update("liter", e.target.value)} className="input" /></Field>
+
+      {/* Optional per-delivery rates */}
+      <Field label="Jar rate (optional)" icon={<Package size={16} />}><input type="number" min="0" value={form.rate} onChange={(e) => update("rate", e.target.value)} className="input" placeholder="Leave blank if unknown" /></Field>
+      <Field label="Water rate (optional)" icon={<Droplets size={16} />}><input type="number" min="0" value={form.waterRate} onChange={(e) => update("waterRate", e.target.value)} className="input" placeholder="Leave blank if unknown" /></Field>
+
       <Field label="Last jar returned" icon={<CheckCircle2 size={16} />}><input type="number" min="0" value={form.returnedJars} onChange={(e) => update("returnedJars", e.target.value)} className="input" /></Field>
-      <Field label="Received amount now" icon={<WalletCards size={16} />}><input type="number" min="0" value={form.receivedAmount} onChange={(e) => update("receivedAmount", e.target.value)} className="input" placeholder="0" /></Field>
+
+      {/* Payment action: none / add to khata / paid */}
+      <Field label="Payment" icon={<WalletCards size={16} />}>
+        <select value={form.paymentAction} onChange={(e) => update("paymentAction", e.target.value)} className="input">
+          <option value="khata">Add to khata</option>
+          <option value="paid">Paid now</option>
+        </select>
+        {form.paymentAction === 'paid' && (
+          <div className="mt-2">
+            <input type="number" min="0" value={form.receivedAmount} onChange={(e) => update("receivedAmount", e.target.value)} className="input mb-2" placeholder="Amount paid" />
+            <select value={form.paymentMode} onChange={(e) => update("paymentMode", e.target.value)} className="input"><option value="cash">Cash</option><option value="upi">UPI</option><option value="online">Online</option></select>
+          </div>
+        )}
+      </Field>
     </div>
-    {received > 0 && <select value={form.paymentMode} onChange={(e) => update("paymentMode", e.target.value)} className="input mt-3"><option value="cash">Cash</option><option value="upi">UPI</option><option value="online">Online</option></select>}
     <textarea value={form.notes} onChange={(e) => update("notes", e.target.value)} placeholder="Delivery note (optional)" className="input mt-3 min-h-20" />
+    {(!chargedAmount || chargedAmount === 0) && <p className="mt-2 text-sm text-slate-600">Rate unknown — delivery will be recorded and jars will be added to customer's pending jars if no payment is made.</p> }
     {!party && form.recentDeliveries?.length > 0 && <div className="mt-3 rounded-xl bg-slate-50 p-3 text-sm"><p className="mb-1 font-bold">Last 3 deliveries</p>{form.recentDeliveries.map((delivery) => <p key={delivery.id}>{delivery.delivery_date} · {delivery.delivered_jars} jar · ₹{delivery.received_amount} received</p>)}</div>}
-    <div className="mt-3 flex items-center justify-between rounded-xl bg-slate-50 p-3 text-sm"><span>{jar} jar · {liter} L</span><span className="font-bold">Order amount ₹{chargedAmount} · Pending ₹{Math.max(0, chargedAmount - received)}</span></div>
+    <div className="mt-3 flex items-center justify-between rounded-xl bg-slate-50 p-3 text-sm"><span>{jar} jar · {liter} L</span><span className="font-bold">Order amount {chargedAmount > 0 ? `₹${chargedAmount}` : '—'} · Pending ₹{Math.max(0, chargedAmount - received)}</span></div>
     {error && <p className="mt-3 rounded-xl bg-red-50 p-3 text-sm text-red-700">{error}</p>}
     <button onClick={onSave} className="mt-3 w-full rounded-xl bg-emerald-600 py-3 font-bold text-white hover:bg-emerald-700">Confirm delivery</button>
   </div>;
