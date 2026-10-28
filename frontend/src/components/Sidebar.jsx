@@ -3,7 +3,7 @@ import { Home, Users, Plus, Briefcase } from "lucide-react";
 
 export default function Sidebar() {
   const menu = [
-    { name: "Dashboard", path: "/", icon: <Home size={20} /> },
+    { name: "Dashboard", path: "/admin", icon: <Home size={20} /> },
     { name: "Customers", path: "/customers", icon: <Users size={20} /> },
     // { name: "Delivery", path: "/delivery", icon: <Truck size={20} /> },
     { name: "Add Expense", path: "/expenses/add", icon: <Plus size={20} /> },
@@ -27,7 +27,7 @@ export default function Sidebar() {
             <NavLink
               key={item.path}
               to={item.path}
-              end={item.path === "/"}
+              end={item.path === "/admin"}
               className={({ isActive }) =>
                 `group flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition ${
                   isActive
@@ -53,7 +53,7 @@ export default function Sidebar() {
             <NavLink
               key={item.path}
               to={item.path}
-              end={item.path === "/"}
+              end={item.path === "/admin"}
               className={({ isActive }) =>
                 `flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 py-1.5 text-[10px] font-medium leading-tight transition ${
                   isActive ? "bg-blue-50 text-blue-700" : "text-slate-500 hover:bg-slate-50"

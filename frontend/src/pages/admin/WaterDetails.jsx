@@ -48,7 +48,7 @@ export default function WaterDetails() {
             <option value="all">All</option>
             <option value="pending">Pending</option>
           </select>
-        </div>
+        </header>
 
         {/* SUMMARY */}
         <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-3">

@@ -100,7 +100,7 @@ export default function JarDetails() {
               Pending
             </button>
           </div>
-        </div>
+        </header>
 
         {/* TOTAL CARDS */}
         <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-3">

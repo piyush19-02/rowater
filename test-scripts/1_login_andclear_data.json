@@ -1,0 +1,430 @@
+{
+    "title": "lofin and clear test datra",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 700,
+            "height": 554,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://testrowater.progset.com/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://testrowater.progset.com/",
+                    "title": "rowater"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Continue as Manager"
+                ],
+                [
+                    "article:nth-of-type(2) > a"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/main/div/section/article[2]/a"
+                ],
+                [
+                    "pierce/article:nth-of-type(2) > a"
+                ],
+                [
+                    "text/Continue as Manager"
+                ]
+            ],
+            "offsetY": 22.33331298828125,
+            "offsetX": 194
+        },
+        {
+            "type": "change",
+            "value": "9343185294",
+            "selectors": [
+                [
+                    "aria/Mobile"
+                ],
+                [
+                    "label:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/form/label[1]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "1234",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/form/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile"
+                ],
+                [
+                    "label:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/form/label[1]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(1) > input"
+                ],
+                [
+                    "text/9343185294"
+                ]
+            ],
+            "offsetY": 25.33331298828125,
+            "offsetX": 134
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile"
+                ],
+                [
+                    "label:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/form/label[1]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(1) > input"
+                ],
+                [
+                    "text/9343185294"
+                ]
+            ],
+            "offsetY": 29.33331298828125,
+            "offsetX": 134
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile"
+                ],
+                [
+                    "label:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/form/label[1]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(1) > input"
+                ],
+                [
+                    "text/9343185294"
+                ]
+            ],
+            "offsetY": 29.33331298828125,
+            "offsetX": 66
+        },
+        {
+            "type": "change",
+            "value": "9343185294",
+            "selectors": [
+                [
+                    "aria/Mobile"
+                ],
+                [
+                    "label:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/form/label[1]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(1) > input"
+                ],
+                [
+                    "text/9343185294"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/form/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ],
+                [
+                    "text/1234"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 20
+        },
+        {
+            "type": "change",
+            "value": "1234",
+            "selectors": [
+                [
+                    "aria/Password"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/form/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ],
+                [
+                    "text/1234"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Login as Manager"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/form/button"
+                ],
+                [
+                    "pierce/button"
+                ],
+                [
+                    "text/Login as Manager"
+                ]
+            ],
+            "offsetY": 12.666656494140625,
+            "offsetX": 68
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Clear test data"
+                ],
+                [
+                    "section button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div/div/button"
+                ],
+                [
+                    "pierce/section button"
+                ],
+                [
+                    "text/Clear test data"
+                ]
+            ],
+            "offsetY": 16.666656494140625,
+            "offsetX": 79.33332824707031
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(1)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/form/label[1]"
+                ],
+                [
+                    "pierce/label:nth-of-type(1)"
+                ],
+                [
+                    "text/Re-enter your"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 99.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "1234",
+            "selectors": [
+                [
+                    "aria/Re-enter your manager password"
+                ],
+                [
+                    "label:nth-of-type(1) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/form/label[1]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(1) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(2)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/form/label[2]"
+                ],
+                [
+                    "pierce/label:nth-of-type(2)"
+                ],
+                [
+                    "text/Type CLEAR-TEST-DATA"
+                ]
+            ],
+            "offsetY": 11.666656494140625,
+            "offsetX": 149.66665649414062,
+            "duration": 1567.6000000238419
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Control"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "c"
+        },
+        {
+            "type": "keyUp",
+            "key": "Control",
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "c",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Type CLEAR-TEST-DATA to confirm"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/form/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 32.666656494140625,
+            "offsetX": 144.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "CLEAR-TEST-DATA",
+            "selectors": [
+                [
+                    "aria/Type CLEAR-TEST-DATA to confirm"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/form/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Type CLEAR-TEST-DATA to confirm"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/form/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 13.666656494140625,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Clear data"
+                ],
+                [
+                    "#root > div > div button.bg-red-600"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/form/div[2]/button[2]"
+                ],
+                [
+                    "pierce/#root > div > div button.bg-red-600"
+                ],
+                [
+                    "text/Clear data"
+                ]
+            ],
+            "offsetY": 23.33331298828125,
+            "offsetX": 89
+        }
+    ]
+}

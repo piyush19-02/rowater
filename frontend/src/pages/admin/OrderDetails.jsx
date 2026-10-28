@@ -182,10 +182,9 @@ export default function OrderDetails() {
             <p className="break-words text-sm text-slate-600">
               {order.notes || "-"}
             </p>
-          </main>
-
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

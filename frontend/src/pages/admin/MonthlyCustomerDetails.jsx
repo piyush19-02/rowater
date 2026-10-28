@@ -242,10 +242,10 @@ export default function MonthlyCustomerDetails() {
               >
                 Close
               </button>
-            </main>
+            </div>
           </div>
         )}
-      </div>
+      </main>
     </div>
   );
 }

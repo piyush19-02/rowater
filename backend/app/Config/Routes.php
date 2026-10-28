@@ -9,6 +9,7 @@ $routes->get('/', 'Home::index');
 $routes->group('api', static function ($routes) {
 
 $routes->post('login', 'Api\AuthController::login');
+$routes->post('manager/clear-test-data', 'Api\TestDataController::clear');
 //upcoming or evwent orders 
 
     $routes->get('party-orders', 'Api\PartyOrderController::index');

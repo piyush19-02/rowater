@@ -28,6 +28,7 @@ import PendingJars from "./pages/manager/PendingJars";
 import ManagerPartyOrders from "./pages/manager/ManagerPartyOrders";
 import ManagerPartyOrderAdd from "./pages/manager/ManagerPartyOrderAdd";
 import ManagerOrderDetails from "./pages/manager/ManagerOrderDetails";
+import HomePage from "./pages/HomePage";
 
 // Protected Route Component
 function ProtectedRoute({ children }) {
@@ -62,8 +63,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/" element={<AdminProtectedRoute><Dashboard /></AdminProtectedRoute>} />
+        <Route path="/admin" element={<AdminProtectedRoute><Dashboard /></AdminProtectedRoute>} />
         <Route path="/customers" element={<AdminProtectedRoute><Customers /></AdminProtectedRoute>} />
         <Route path="/delivery" element={<AdminProtectedRoute><Delivery/></AdminProtectedRoute>} />
         <Route path="/jar-details" element={<AdminProtectedRoute><JarDetails/></AdminProtectedRoute>} />
@@ -140,6 +142,7 @@ export default function App() {
         <Route path="/manager/party-orders" element={<ProtectedRoute><ManagerPartyOrders /></ProtectedRoute>} />
         <Route path="/manager/party-orders/add" element={<ProtectedRoute><ManagerPartyOrderAdd /></ProtectedRoute>} />
         <Route path="/manager/order/:id" element={<ProtectedRoute><ManagerOrderDetails /></ProtectedRoute>} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

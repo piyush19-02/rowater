@@ -28,6 +28,32 @@ to your `app` folder. The affected files can be copied or merged from
 Copy `env` to `.env` and tailor for your app, specifically the baseURL
 and any database settings.
 
+## Clearing test data
+
+Before running this against the test-production database, take a database backup
+and verify that the backend `.env` points to the intended database. From the
+`backend` directory, preview the cleanup first:
+
+```sh
+php spark data:clear-test
+```
+
+The command is a dry run by default. It keeps all `users` and `customers`,
+deletes deliveries, payments, party orders, party returns, and expenses, and
+resets customer pending amounts, security deposits, and outside jar balances.
+Expense categories and customer profile details/rates are retained.
+
+Only after reviewing the preview and confirming the database target, execute it
+with the explicit confirmation:
+
+```sh
+php spark data:clear-test --confirm=CLEAR-TEST-DATA
+```
+
+The same cleanup is available from the Manager dashboard for test runs. It
+requires an active manager's mobile/password and the exact confirmation phrase
+`CLEAR-TEST-DATA`; it clears shared operational data for the whole database.
+
 ## Important Change with index.php
 
 `index.php` is no longer in the root of the project! It has been moved inside the *public* folder,

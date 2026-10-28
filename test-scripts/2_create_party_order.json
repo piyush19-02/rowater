@@ -1,0 +1,4721 @@
+{
+    "title": "CREATE 10 PARTY ORDERS",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 700,
+            "height": 554,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://testrowater.progset.com/manager",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://testrowater.progset.com/manager",
+                    "title": "rowater"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "nav a:nth-of-type(5)",
+                "xpath///*[@id=\"root\"]/div/nav/div/a[5]",
+                "pierce/div > nav a:nth-of-type(5)"
+            ],
+            "offsetX": 10.52545166015625,
+            "offsetY": 13.4189453125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 27.333328247070312,
+            "offsetX": 91.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "PIYUSH TEST 01",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 254.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "9000000001",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 121.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "DEWAS TEST 01",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 8.666656494140625,
+            "offsetX": 142.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST PARTY 01",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-12'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-12'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 164.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 270.6666564941406
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '16:22'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '16:22'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(9) > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/span"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > span"
+                ],
+                [
+                    "text/Delivery address"
+                ]
+            ],
+            "offsetY": 2.875,
+            "offsetX": 317.3333320617676
+        },
+        {
+            "type": "change",
+            "value": "YADAV MARRIGE GARDEN 01",
+            "selectors": [
+                [
+                    "aria/Delivery address"
+                ],
+                [
+                    "label:nth-of-type(9) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "offsetY": 28.541656494140625,
+            "offsetX": 157.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "10",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "offsetY": 21.208328247070312,
+            "offsetX": 127.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "10",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "offsetY": 27.875,
+            "offsetX": 109.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "500",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "offsetY": 30.541656494140625,
+            "offsetX": 166.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST ORDER 01",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Save party order"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/button"
+                ],
+                [
+                    "pierce/main button"
+                ],
+                [
+                    "text/Save party order"
+                ]
+            ],
+            "offsetY": 15.541656494140625,
+            "offsetX": 299.3333320617676
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 27.333328247070312,
+            "offsetX": 91.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "PIYUSH TEST 02",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 254.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "9000000002",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 121.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "DEWAS TEST 02",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 8.666656494140625,
+            "offsetX": 142.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST PARTY 02",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-13'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-13'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 164.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 270.6666564941406
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '16:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '16:30'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(9) > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/span"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > span"
+                ],
+                [
+                    "text/Delivery address"
+                ]
+            ],
+            "offsetY": 2.875,
+            "offsetX": 317.3333320617676
+        },
+        {
+            "type": "change",
+            "value": "YADAV MARRIGE GARDEN 02",
+            "selectors": [
+                [
+                    "aria/Delivery address"
+                ],
+                [
+                    "label:nth-of-type(9) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "offsetY": 28.541656494140625,
+            "offsetX": 157.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "11",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "offsetY": 21.208328247070312,
+            "offsetX": 127.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "12",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "offsetY": 27.875,
+            "offsetX": 109.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "550",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "offsetY": 30.541656494140625,
+            "offsetX": 166.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST ORDER 02",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Save party order"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/button"
+                ],
+                [
+                    "pierce/main button"
+                ],
+                [
+                    "text/Save party order"
+                ]
+            ],
+            "offsetY": 15.541656494140625,
+            "offsetX": 299.3333320617676
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 27.333328247070312,
+            "offsetX": 91.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "PIYUSH TEST 03",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 254.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "9000000003",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 121.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "DEWAS TEST 03",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 8.666656494140625,
+            "offsetX": 142.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST PARTY 03",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-14'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-14'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 164.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 270.6666564941406
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '17:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '17:00'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(9) > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/span"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > span"
+                ],
+                [
+                    "text/Delivery address"
+                ]
+            ],
+            "offsetY": 2.875,
+            "offsetX": 317.3333320617676
+        },
+        {
+            "type": "change",
+            "value": "YADAV MARRIGE GARDEN 03",
+            "selectors": [
+                [
+                    "aria/Delivery address"
+                ],
+                [
+                    "label:nth-of-type(9) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "offsetY": 28.541656494140625,
+            "offsetX": 157.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "12",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "offsetY": 21.208328247070312,
+            "offsetX": 127.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "14",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "offsetY": 27.875,
+            "offsetX": 109.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "600",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "offsetY": 30.541656494140625,
+            "offsetX": 166.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST ORDER 03",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Save party order"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/button"
+                ],
+                [
+                    "pierce/main button"
+                ],
+                [
+                    "text/Save party order"
+                ]
+            ],
+            "offsetY": 15.541656494140625,
+            "offsetX": 299.3333320617676
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 27.333328247070312,
+            "offsetX": 91.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "PIYUSH TEST 04",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 254.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "9000000004",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 121.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "DEWAS TEST 04",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 8.666656494140625,
+            "offsetX": 142.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST PARTY 04",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-15'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-15'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 164.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 270.6666564941406
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '17:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '17:30'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(9) > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/span"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > span"
+                ],
+                [
+                    "text/Delivery address"
+                ]
+            ],
+            "offsetY": 2.875,
+            "offsetX": 317.3333320617676
+        },
+        {
+            "type": "change",
+            "value": "YADAV MARRIGE GARDEN 04",
+            "selectors": [
+                [
+                    "aria/Delivery address"
+                ],
+                [
+                    "label:nth-of-type(9) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "offsetY": 28.541656494140625,
+            "offsetX": 157.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "13",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "offsetY": 21.208328247070312,
+            "offsetX": 127.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "16",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "offsetY": 27.875,
+            "offsetX": 109.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "650",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "offsetY": 30.541656494140625,
+            "offsetX": 166.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST ORDER 04",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Save party order"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/button"
+                ],
+                [
+                    "pierce/main button"
+                ],
+                [
+                    "text/Save party order"
+                ]
+            ],
+            "offsetY": 15.541656494140625,
+            "offsetX": 299.3333320617676
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 27.333328247070312,
+            "offsetX": 91.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "PIYUSH TEST 05",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 254.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "9000000005",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 121.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "DEWAS TEST 05",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 8.666656494140625,
+            "offsetX": 142.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST PARTY 05",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-16'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-16'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 164.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 270.6666564941406
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '18:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '18:00'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(9) > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/span"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > span"
+                ],
+                [
+                    "text/Delivery address"
+                ]
+            ],
+            "offsetY": 2.875,
+            "offsetX": 317.3333320617676
+        },
+        {
+            "type": "change",
+            "value": "YADAV MARRIGE GARDEN 05",
+            "selectors": [
+                [
+                    "aria/Delivery address"
+                ],
+                [
+                    "label:nth-of-type(9) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "offsetY": 28.541656494140625,
+            "offsetX": 157.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "14",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "offsetY": 21.208328247070312,
+            "offsetX": 127.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "18",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "offsetY": 27.875,
+            "offsetX": 109.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "700",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "offsetY": 30.541656494140625,
+            "offsetX": 166.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST ORDER 05",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Save party order"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/button"
+                ],
+                [
+                    "pierce/main button"
+                ],
+                [
+                    "text/Save party order"
+                ]
+            ],
+            "offsetY": 15.541656494140625,
+            "offsetX": 299.3333320617676
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 27.333328247070312,
+            "offsetX": 91.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "PIYUSH TEST 06",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 254.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "9000000006",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 121.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "DEWAS TEST 06",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 8.666656494140625,
+            "offsetX": 142.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST PARTY 06",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-17'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-17'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 164.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 270.6666564941406
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '18:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '18:30'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(9) > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/span"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > span"
+                ],
+                [
+                    "text/Delivery address"
+                ]
+            ],
+            "offsetY": 2.875,
+            "offsetX": 317.3333320617676
+        },
+        {
+            "type": "change",
+            "value": "YADAV MARRIGE GARDEN 06",
+            "selectors": [
+                [
+                    "aria/Delivery address"
+                ],
+                [
+                    "label:nth-of-type(9) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "offsetY": 28.541656494140625,
+            "offsetX": 157.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "15",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "offsetY": 21.208328247070312,
+            "offsetX": 127.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "20",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "offsetY": 27.875,
+            "offsetX": 109.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "750",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "offsetY": 30.541656494140625,
+            "offsetX": 166.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST ORDER 06",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Save party order"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/button"
+                ],
+                [
+                    "pierce/main button"
+                ],
+                [
+                    "text/Save party order"
+                ]
+            ],
+            "offsetY": 15.541656494140625,
+            "offsetX": 299.3333320617676
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 27.333328247070312,
+            "offsetX": 91.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "PIYUSH TEST 07",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 254.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "9000000007",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 121.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "DEWAS TEST 07",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 8.666656494140625,
+            "offsetX": 142.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST PARTY 07",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-18'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-18'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 164.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 270.6666564941406
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '19:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '19:00'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(9) > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/span"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > span"
+                ],
+                [
+                    "text/Delivery address"
+                ]
+            ],
+            "offsetY": 2.875,
+            "offsetX": 317.3333320617676
+        },
+        {
+            "type": "change",
+            "value": "YADAV MARRIGE GARDEN 07",
+            "selectors": [
+                [
+                    "aria/Delivery address"
+                ],
+                [
+                    "label:nth-of-type(9) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "offsetY": 28.541656494140625,
+            "offsetX": 157.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "16",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "offsetY": 21.208328247070312,
+            "offsetX": 127.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "22",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "offsetY": 27.875,
+            "offsetX": 109.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "800",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "offsetY": 30.541656494140625,
+            "offsetX": 166.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST ORDER 07",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Save party order"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/button"
+                ],
+                [
+                    "pierce/main button"
+                ],
+                [
+                    "text/Save party order"
+                ]
+            ],
+            "offsetY": 15.541656494140625,
+            "offsetX": 299.3333320617676
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 27.333328247070312,
+            "offsetX": 91.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "PIYUSH TEST 08",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 254.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "9000000008",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 121.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "DEWAS TEST 08",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 8.666656494140625,
+            "offsetX": 142.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST PARTY 08",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-19'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-19'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 164.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 270.6666564941406
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '19:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '19:30'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(9) > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/span"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > span"
+                ],
+                [
+                    "text/Delivery address"
+                ]
+            ],
+            "offsetY": 2.875,
+            "offsetX": 317.3333320617676
+        },
+        {
+            "type": "change",
+            "value": "YADAV MARRIGE GARDEN 08",
+            "selectors": [
+                [
+                    "aria/Delivery address"
+                ],
+                [
+                    "label:nth-of-type(9) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "offsetY": 28.541656494140625,
+            "offsetX": 157.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "17",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "offsetY": 21.208328247070312,
+            "offsetX": 127.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "24",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "offsetY": 27.875,
+            "offsetX": 109.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "850",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "offsetY": 30.541656494140625,
+            "offsetX": 166.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST ORDER 08",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Save party order"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/button"
+                ],
+                [
+                    "pierce/main button"
+                ],
+                [
+                    "text/Save party order"
+                ]
+            ],
+            "offsetY": 15.541656494140625,
+            "offsetX": 299.3333320617676
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 27.333328247070312,
+            "offsetX": 91.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "PIYUSH TEST 09",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 254.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "9000000009",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 121.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "DEWAS TEST 09",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 8.666656494140625,
+            "offsetX": 142.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST PARTY 09",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-20'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-20'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 164.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 270.6666564941406
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '20:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '20:00'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(9) > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/span"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > span"
+                ],
+                [
+                    "text/Delivery address"
+                ]
+            ],
+            "offsetY": 2.875,
+            "offsetX": 317.3333320617676
+        },
+        {
+            "type": "change",
+            "value": "YADAV MARRIGE GARDEN 09",
+            "selectors": [
+                [
+                    "aria/Delivery address"
+                ],
+                [
+                    "label:nth-of-type(9) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "offsetY": 28.541656494140625,
+            "offsetX": 157.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "18",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "offsetY": 21.208328247070312,
+            "offsetX": 127.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "26",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "offsetY": 27.875,
+            "offsetX": 109.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "900",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "offsetY": 30.541656494140625,
+            "offsetX": 166.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST ORDER 09",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Save party order"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/button"
+                ],
+                [
+                    "pierce/main button"
+                ],
+                [
+                    "text/Save party order"
+                ]
+            ],
+            "offsetY": 15.541656494140625,
+            "offsetX": 299.3333320617676
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "offsetY": 27.333328247070312,
+            "offsetX": 91.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "PIYUSH TEST 10",
+            "selectors": [
+                [
+                    "aria/Customer name *"
+                ],
+                [
+                    "label:nth-of-type(2) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[2]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 254.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "9000000010",
+            "selectors": [
+                [
+                    "aria/Mobile *"
+                ],
+                [
+                    "label:nth-of-type(3) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[3]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(3) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 121.66665649414062
+        },
+        {
+            "type": "change",
+            "value": "DEWAS TEST 10",
+            "selectors": [
+                [
+                    "aria/Customer address"
+                ],
+                [
+                    "label:nth-of-type(4) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[4]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(4) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "offsetY": 8.666656494140625,
+            "offsetX": 142.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST PARTY 10",
+            "selectors": [
+                [
+                    "aria/Event name *"
+                ],
+                [
+                    "label:nth-of-type(5) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[5]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(5) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event type"
+                ],
+                [
+                    "label:nth-of-type(6) > select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) > select"
+                ]
+            ],
+            "offsetY": 14.333328247070312,
+            "offsetX": 153.66665649414062
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-21'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-21'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 40,
+            "offsetX": 164.66665649414062
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Event time"
+                ],
+                [
+                    "label:nth-of-type(8) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[8]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(8) > input"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 270.6666564941406
+        },
+        {
+            "type": "waitForExpression",
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '20:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '20:30'), 150); })",
+            "timeout": 10000
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(9) > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/span"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > span"
+                ],
+                [
+                    "text/Delivery address"
+                ]
+            ],
+            "offsetY": 2.875,
+            "offsetX": 317.3333320617676
+        },
+        {
+            "type": "change",
+            "value": "YADAV MARRIGE GARDEN 10",
+            "selectors": [
+                [
+                    "aria/Delivery address"
+                ],
+                [
+                    "label:nth-of-type(9) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[9]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(9) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "offsetY": 28.541656494140625,
+            "offsetX": 157.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "19",
+            "selectors": [
+                [
+                    "aria/Jar quantity"
+                ],
+                [
+                    "label:nth-of-type(10) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[10]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(10) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "offsetY": 21.208328247070312,
+            "offsetX": 127.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "28",
+            "selectors": [
+                [
+                    "aria/Water quantity (litres)"
+                ],
+                [
+                    "label:nth-of-type(12) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[12]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(12) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "offsetY": 27.875,
+            "offsetX": 109.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "950",
+            "selectors": [
+                [
+                    "aria/Advance / received now"
+                ],
+                [
+                    "label:nth-of-type(14) > input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[14]/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(14) > input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "offsetY": 30.541656494140625,
+            "offsetX": 166.33333206176758
+        },
+        {
+            "type": "change",
+            "value": "TEST ORDER 10",
+            "selectors": [
+                [
+                    "aria/Remarks"
+                ],
+                [
+                    "label:nth-of-type(15) > textarea"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/div[1]/label[15]/textarea"
+                ],
+                [
+                    "pierce/label:nth-of-type(15) > textarea"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Save party order"
+                ],
+                [
+                    "main button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/button"
+                ],
+                [
+                    "pierce/main button"
+                ],
+                [
+                    "text/Save party order"
+                ]
+            ],
+            "offsetY": 15.541656494140625,
+            "offsetX": 299.3333320617676
+        }
+    ]
+}

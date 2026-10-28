@@ -24,7 +24,7 @@ export default function AdminLogin() {
       });
       const auth = loginAdmin(result.user);
       if (auth.success) {
-        navigate("/");
+        navigate("/admin");
       } else {
         setError(auth.error);
       }
