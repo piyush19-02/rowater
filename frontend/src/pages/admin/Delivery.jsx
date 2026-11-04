@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { CalendarDays, CheckCircle2, Droplets, Package, WalletCards } from "lucide-react";
 import Sidebar from "../../components/Sidebar";
 import { api } from "../../lib/api";
+import { useManager } from "../../context/ManagerContext";
 
 const money = (value) => `₹${Number(value || 0).toLocaleString("en-IN")}`;
 const today = () => new Date().toISOString().slice(0, 10);
@@ -29,6 +30,7 @@ function blankForm(order = {}) {
 
 /** Delivery workspace for both event/party and regular scheduled customers. */
 export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
+  const { refreshSidebarCounts } = useManager();
   const [searchParams] = useSearchParams();
   const requestedOrderId = searchParams.get("order");
   const [activeTab, setActiveTab] = useState(() => searchParams.get("tab") === "party" ? "party" : "regular");
@@ -142,6 +144,11 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
     try {
       await api("/deliveries", { method: "POST", body: { customer_id: entry.customerId, party_order_id: entry.partyOrderId, manager_id: managerId, delivery_date: entry.deliveryDate, delivered_jars: jar, delivered_water_liters: liter, returned_jars: returnedJars, amount, received_amount: received, payment_mode: entry.paymentMode, remarks: form.notes } });
       setOpenId(null); setForm(blankForm()); await load();
+      if (managerId) {
+        refreshSidebarCounts().catch((refreshError) => {
+          console.error("Failed to refresh manager sidebar counts:", refreshError);
+        });
+      }
     } catch (requestError) { setError(requestError.message); }
   };
 

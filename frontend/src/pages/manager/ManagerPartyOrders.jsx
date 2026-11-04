@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import ManagerSidebar from "../../components/ManagerSidebar";
 import { api } from "../../lib/api";
 const today = () => new Date().toISOString().slice(0, 10);
+const waterLiters = (order) => Number(order.water_liters ?? order.water_litres ?? order.water ?? 0) || 0;
 export default function ManagerPartyOrders() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
@@ -17,11 +18,11 @@ export default function ManagerPartyOrders() {
 
   return <div className="flex min-h-screen bg-slate-100"><ManagerSidebar /><main className="w-full p-4 pb-24 md:ml-60 md:p-6"><p className="text-sm font-semibold text-blue-700">Party orders</p><h1 className="mb-2 text-2xl font-bold">{scope === "today" ? "Today's pending orders" : "Upcoming orders"}</h1><p className="mb-5 text-sm text-slate-500">Order ko click karein aur direct delivery complete karein.</p>{error && <p className="mb-3 rounded-xl bg-red-50 p-3 text-sm text-red-700">{error}</p>}
 
-{visible.length ? <div className="space-y-3">{visible.map((o) => <button key={o.id} onClick={() => navigate(`/manager/delivery?tab=party&order=${o.id}`)} className="w-full rounded-2xl bg-white p-4 text-left shadow-sm hover:ring-2 hover:ring-blue-200"><div className="flex justify-between"><p className="font-bold">{o.customer_name}</p><span className="rounded-full bg-blue-100 px-2 py-1 text-xs font-bold text-blue-700">Deliver</span></div><p className="mt-1 text-sm text-slate-500">{o.event_name || "Party"} · {o.event_date}</p><p className="mt-2 text-sm font-semibold">{o.total_jars} jar · {o.water_liters || 0} L · ₹{o.pending_amount} pending</p></button>)}</div> : <p className="rounded-2xl bg-white p-8 text-center text-slate-500">No pending orders.</p>}
+{visible.length ? <div className="space-y-3">{visible.map((o) => <button key={o.id} onClick={() => navigate(`/manager/delivery?tab=party&order=${o.id}`)} className="w-full rounded-2xl bg-white p-4 text-left shadow-sm hover:ring-2 hover:ring-blue-200"><div className="flex justify-between"><p className="font-bold">{o.customer_name}</p><span className="rounded-full bg-blue-100 px-2 py-1 text-xs font-bold text-blue-700">Deliver</span></div><p className="mt-1 text-sm text-slate-500">{o.event_name || "Party"} · {o.event_date}</p><p className="mt-2 text-sm font-semibold">{o.total_jars} jar · {waterLiters(o)} L · ₹{o.pending_amount} pending</p></button>)}</div> : <p className="rounded-2xl bg-white p-8 text-center text-slate-500">No pending orders.</p>}
 
 <hr className="my-6" />
 <h2 className="text-lg font-bold mb-3">Completed orders</h2>
-{completed.length ? <div className="space-y-3">{completed.map((o) => <button key={o.id} onClick={() => navigate(`/manager/order/${o.id}`)} className="w-full rounded-2xl bg-white p-4 text-left shadow-sm hover:ring-2 hover:ring-slate-200"><div className="flex justify-between"><p className="font-bold">{o.customer_name}</p><span className="rounded-full bg-emerald-100 px-2 py-1 text-xs font-bold text-emerald-700">Completed</span></div><p className="mt-1 text-sm text-slate-500">{o.event_name || "Party"} · {o.event_date}</p><p className="mt-2 text-sm font-semibold">{o.total_jars} jar · {o.water_liters || 0} L · ₹{o.total_amount} total</p></button>)}</div> : <p className="rounded-2xl bg-white p-6 text-center text-slate-500">No completed orders yet.</p>}
+{completed.length ? <div className="space-y-3">{completed.map((o) => <button key={o.id} onClick={() => navigate(`/manager/order/${o.id}`)} className="w-full rounded-2xl bg-white p-4 text-left shadow-sm hover:ring-2 hover:ring-slate-200"><div className="flex justify-between"><p className="font-bold">{o.customer_name}</p><span className="rounded-full bg-emerald-100 px-2 py-1 text-xs font-bold text-emerald-700">Completed</span></div><p className="mt-1 text-sm text-slate-500">{o.event_name || "Party"} · {o.event_date}</p><p className="mt-2 text-sm font-semibold">{o.total_jars} jar · {waterLiters(o)} L · ₹{o.total_amount} total</p></button>)}</div> : <p className="rounded-2xl bg-white p-6 text-center text-slate-500">No completed orders yet.</p>}
 
 </main></div>;
 }

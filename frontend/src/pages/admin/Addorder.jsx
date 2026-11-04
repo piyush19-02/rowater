@@ -22,14 +22,14 @@ const empty = {
 };
 
 export default function AddPartyOrder({ SidebarComponent = Sidebar }) {
-  const { currentManager } = useManager();
+  const { currentManager, refreshSidebarCounts } = useManager();
   const [customers, setCustomers] = useState([]);
   const [form, setForm] = useState(empty);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState({ text: "", type: "" });
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    api("/customers").then((result) => setCustomers(result.data || [])).catch((error) => setMessage(error.message));
+    api("/customers").then((result) => setCustomers(result.data || [])).catch((error) => setMessage({ text: error.message, type: "error" }));
   }, []);
 
   const total = useMemo(
@@ -56,10 +56,11 @@ export default function AddPartyOrder({ SidebarComponent = Sidebar }) {
 
   const save = async () => {
     setSaving(true);
-    setMessage("");
+    setMessage({ text: "", type: "" });
 
     const body = {
       ...form,
+      water_liters: Number(form.water_liters || 0),
       total_amount: total,
       pending_amount: pending,
       ...(currentManager?.id ? { manager_id: currentManager.id } : {}),
@@ -67,10 +68,13 @@ export default function AddPartyOrder({ SidebarComponent = Sidebar }) {
 
     try {
       await api("/party-orders", { method: "POST", body });
-      setMessage("Party order saved successfully.");
+      setMessage({ text: "Party order saved successfully.", type: "success" });
       setForm(empty);
+      refreshSidebarCounts().catch((error) => {
+        console.error("Failed to refresh manager sidebar counts:", error);
+      });
     } catch (error) {
-      setMessage(error.message);
+      setMessage({ text: error.message, type: "error" });
     } finally {
       setSaving(false);
     }
@@ -149,7 +153,7 @@ export default function AddPartyOrder({ SidebarComponent = Sidebar }) {
             <div><p className="text-xs text-slate-500">Received</p><b className="mt-1 block text-lg text-emerald-700">₹{form.advance || 0}</b></div>
             <div><p className="text-xs text-slate-500">Pending</p><b className="mt-1 block text-lg text-red-700">₹{pending}</b></div>
           </div>
-          {message && <p className="mt-4 rounded-xl bg-slate-50 p-3 text-sm text-slate-700">{message}</p>}
+          {message.text && <p role={message.type === "success" ? "status" : "alert"} className={`mt-4 rounded-xl p-3 text-sm ${message.type === "success" ? "bg-emerald-50 text-emerald-800" : "bg-red-50 text-red-700"}`}>{message.text}</p>}
           <button disabled={saving} onClick={save} className="mt-5 w-full rounded-xl bg-blue-600 py-3 font-bold text-white transition hover:bg-blue-700 disabled:opacity-50">
             {saving ? "Saving..." : "Save party order"}
           </button>

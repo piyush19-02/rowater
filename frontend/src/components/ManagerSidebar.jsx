@@ -15,23 +15,12 @@ import {
 
 export default function ManagerSidebar() {
   const navigate = useNavigate();
-  const { logoutManager } = useManager();
-  const [partyCounts, setPartyCounts] = React.useState({ pending: 0, upcoming: 0, completed: 0 });
-  const [deliveryPending, setDeliveryPending] = React.useState(0);
+  const { logoutManager, sidebarCounts } = useManager();
 
   const handleLogout = () => {
     logoutManager();
     navigate("/manager/login");
   };
-
-  React.useEffect(() => {
-    let mounted = true;
-    import('../lib/api').then(({ api }) => {
-      api('/party-orders').then((r) => { if (!mounted) return; const orders = r.data || []; const todayStr = new Date().toISOString().slice(0,10); const pending = orders.filter((o) => o.status !== 'completed' && o.event_date <= todayStr).length; const upcoming = orders.filter((o) => o.status !== 'completed' && o.event_date > todayStr).length; const completed = orders.filter((o) => o.status === 'completed').length; setPartyCounts({ pending, upcoming, completed }); }).catch(() => {});
-      api('/deliveries?type=regular').then((r) => { if (!mounted) return; setDeliveryPending((r.data || []).filter(d => d.delivery_status !== 'delivered').length); }).catch(() => {});
-    }).catch(() => {});
-    return () => { mounted = false; };
-  }, []);
 
   return (
     <>
@@ -54,11 +43,11 @@ export default function ManagerSidebar() {
 
           <MenuItem path="/manager/delivery"
             icon={<Users size={20} />}
-            text={`Delivery ${deliveryPending > 0 ? `(${deliveryPending})` : ''}`}
+            text={`Delivery ${sidebarCounts.deliveryPending > 0 ? `(${sidebarCounts.deliveryPending})` : ''}`}
           />
           <MenuItem path="/manager/customers" icon={<UserPlus size={20} />} text="Add customer" />
           <MenuItem path="/manager/pending-jars" icon={<Package size={20} />} text="Pending jars" />
-          <MenuItem path="/manager/party-orders/add" icon={<ClipboardPlus size={20} />} text={`Party ${partyCounts.pending > 0 ? `(${partyCounts.pending})` : ''}`} />
+          <MenuItem path="/manager/party-orders/add" icon={<ClipboardPlus size={20} />} text={`Party ${sidebarCounts.partyPending > 0 ? `(${sidebarCounts.partyPending})` : ''}`} />
           <MenuItem path="/manager/daily-expense" icon={<ReceiptText size={20} />} text="Expense" />
 
           <MenuItem onClick={handleLogout}

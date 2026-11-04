@@ -1,10 +1,13 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, useCallback, useRef } from "react";
+import { api } from "../lib/api";
 
 const ManagerContext = createContext();
 
 export function ManagerProvider({ children }) {
   const [currentManager, setCurrentManager] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [sidebarCounts, setSidebarCounts] = useState({ partyPending: 0, deliveryPending: 0 });
+  const sidebarCountsLoaded = useRef(false);
 
   // Load manager from localStorage on mount
   useEffect(() => {
@@ -18,6 +21,31 @@ export function ManagerProvider({ children }) {
     }
     setIsLoading(false);
   }, []);
+
+  const refreshSidebarCounts = useCallback(async () => {
+    const [partyResult, deliveryResult] = await Promise.all([
+      api("/party-orders"),
+      api("/deliveries?type=regular"),
+    ]);
+    const today = new Date().toISOString().slice(0, 10);
+    const orders = partyResult.data || [];
+    setSidebarCounts({
+      partyPending: orders.filter((order) => order.status !== "completed" && order.event_date <= today).length,
+      deliveryPending: (deliveryResult.data || []).filter((delivery) => delivery.delivery_status !== "delivered").length,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!currentManager) {
+      sidebarCountsLoaded.current = false;
+      return;
+    }
+    if (sidebarCountsLoaded.current) return;
+    sidebarCountsLoaded.current = true;
+    refreshSidebarCounts().catch((error) => {
+      console.error("Failed to load manager sidebar counts:", error);
+    });
+  }, [currentManager, refreshSidebarCounts]);
 
   // Login manager
   const loginManager = (manager) => {
@@ -40,6 +68,8 @@ export function ManagerProvider({ children }) {
     <ManagerContext.Provider
       value={{
         currentManager,
+        sidebarCounts,
+        refreshSidebarCounts,
         loginManager,
         logoutManager,
         isLoggedIn,
