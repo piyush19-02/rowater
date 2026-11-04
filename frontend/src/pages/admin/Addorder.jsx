@@ -27,6 +27,7 @@ export default function AddPartyOrder({ SidebarComponent = Sidebar }) {
   const [form, setForm] = useState(empty);
   const [message, setMessage] = useState({ text: "", type: "" });
   const [saving, setSaving] = useState(false);
+  const [confirmingSave, setConfirmingSave] = useState(false);
 
   useEffect(() => {
     api("/customers").then((result) => setCustomers(result.data || [])).catch((error) => setMessage({ text: error.message, type: "error" }));
@@ -55,8 +56,7 @@ export default function AddPartyOrder({ SidebarComponent = Sidebar }) {
   };
 
   const save = async () => {
-    if (!window.confirm("Save this party order?")) return;
-
+    setConfirmingSave(false);
     setSaving(true);
     setMessage({ text: "", type: "" });
 
@@ -156,11 +156,21 @@ export default function AddPartyOrder({ SidebarComponent = Sidebar }) {
             <div><p className="text-xs text-slate-500">Pending</p><b className="mt-1 block text-lg text-red-700">₹{pending}</b></div>
           </div>
           {message.text && <p role={message.type === "success" ? "status" : "alert"} className={`mt-4 rounded-xl p-3 text-sm ${message.type === "success" ? "bg-emerald-50 text-emerald-800" : "bg-red-50 text-red-700"}`}>{message.text}</p>}
-          <button disabled={saving} onClick={save} className="mt-5 w-full rounded-xl bg-blue-600 py-3 font-bold text-white transition hover:bg-blue-700 disabled:opacity-50">
+          <button disabled={saving} onClick={() => setConfirmingSave(true)} className="mt-5 w-full rounded-xl bg-blue-600 py-3 font-bold text-white transition hover:bg-blue-700 disabled:opacity-50">
             {saving ? "Saving..." : "Save party order"}
           </button>
         </section>
       </main>
+      {confirmingSave && <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/50 p-4">
+        <section role="dialog" aria-modal="true" aria-labelledby="confirm-party-order-title" className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
+          <h2 id="confirm-party-order-title" className="text-lg font-bold text-slate-900">Confirm party order</h2>
+          <p className="mt-2 text-sm text-slate-600">Are you sure you want to save this party order?</p>
+          <div className="mt-6 flex justify-end gap-3">
+            <button type="button" onClick={() => setConfirmingSave(false)} className="rounded-xl border border-slate-300 px-4 py-2 font-semibold text-slate-700 hover:bg-slate-50">Cancel</button>
+            <button type="button" onClick={save} className="rounded-xl bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700">Yes, save order</button>
+          </div>
+        </section>
+      </div>}
     </div>
   );
 }

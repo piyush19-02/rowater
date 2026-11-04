@@ -40,8 +40,15 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
   const [todayDeliveries, setTodayDeliveries] = useState([]);
   const [regularStatus, setRegularStatus] = useState("pending");
   const [error, setError] = useState("");
+  const [successToast, setSuccessToast] = useState("");
   const [openId, setOpenId] = useState(null);
   const [form, setForm] = useState(blankForm());
+
+  useEffect(() => {
+    if (!successToast) return undefined;
+    const timeout = window.setTimeout(() => setSuccessToast(""), 4000);
+    return () => window.clearTimeout(timeout);
+  }, [successToast]);
 
   const load = async () => {
     try {
@@ -143,6 +150,8 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
     };
     try {
       await api("/deliveries", { method: "POST", body: { customer_id: entry.customerId, party_order_id: entry.partyOrderId, manager_id: managerId, delivery_date: entry.deliveryDate, delivered_jars: jar, delivered_water_liters: liter, returned_jars: returnedJars, amount, received_amount: received, payment_mode: entry.paymentMode, remarks: form.notes } });
+      setError("");
+      setSuccessToast("Delivered successfully.");
       setOpenId(null); setForm(blankForm()); await load();
       if (managerId) {
         refreshSidebarCounts().catch((refreshError) => {
@@ -187,6 +196,10 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
 
   return <div className="flex min-h-screen bg-slate-100">
     {React.createElement(SidebarComponent)}
+    {successToast && <div role="status" aria-live="polite" className="fixed right-4 top-4 z-[70] flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-3 font-semibold text-white shadow-lg">
+      <CheckCircle2 size={20} />
+      {successToast}
+    </div>}
     <main className="min-h-screen w-full min-w-0 p-4 pb-24 sm:p-6 md:ml-60 md:p-8">
       <header className="mb-5">
         <p className="text-sm font-semibold text-blue-700">Delivery workspace</p>

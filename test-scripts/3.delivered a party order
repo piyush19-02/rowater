@@ -1,0 +1,187 @@
+{
+    "title": "Recording 11/4/2026 at 6:27:48 PM",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 593,
+            "height": 615,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://testrowater.progset.com/manager",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://testrowater.progset.com/manager",
+                    "title": "rowater"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Delivery",
+                    "aria/[role=\"generic\"]"
+                ],
+                [
+                    "a:nth-of-type(2) > span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/nav/div/a[2]/span"
+                ],
+                [
+                    "pierce/a:nth-of-type(2) > span"
+                ]
+            ],
+            "offsetY": 8.4351806640625,
+            "offsetX": 11.953697204589844
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Party orders (9)"
+                ],
+                [
+                    "div.gap-1 > button.text-slate-600"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/div[1]/button[2]"
+                ],
+                [
+                    "pierce/div.gap-1 > button.text-slate-600"
+                ],
+                [
+                    "text/Party orders"
+                ]
+            ],
+            "offsetY": 19.034713745117188,
+            "offsetX": 123.34259033203125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "article:nth-of-type(1) button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/article[1]/div[1]/button"
+                ],
+                [
+                    "pierce/article:nth-of-type(1) button"
+                ]
+            ],
+            "offsetY": 17.321746826171875,
+            "offsetX": 8.76617431640625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Payment"
+                ],
+                [
+                    "select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/article[1]/div[3]/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/select"
+                ]
+            ],
+            "offsetY": 26.953689575195312,
+            "offsetX": 314.26851654052734
+        },
+        {
+            "type": "change",
+            "value": "paid",
+            "selectors": [
+                [
+                    "aria/Payment"
+                ],
+                [
+                    "select"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/article[1]/div[3]/div[1]/label[6]/select"
+                ],
+                [
+                    "pierce/select"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Amount paid"
+                ],
+                [
+                    "label:nth-of-type(6) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/article[1]/div[3]/div[1]/label[6]/div/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) input"
+                ]
+            ],
+            "offsetY": 23.4976806640625,
+            "offsetX": 224.26851654052734
+        },
+        {
+            "type": "change",
+            "value": "600",
+            "selectors": [
+                [
+                    "aria/Amount paid"
+                ],
+                [
+                    "label:nth-of-type(6) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/article[1]/div[3]/div[1]/label[6]/div/input"
+                ],
+                [
+                    "pierce/label:nth-of-type(6) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Confirm delivery"
+                ],
+                [
+                    "div.mt-4 > button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/main/section/article[1]/div[3]/button"
+                ],
+                [
+                    "pierce/div.mt-4 > button"
+                ],
+                [
+                    "text/Confirm delivery"
+                ]
+            ],
+            "offsetY": 14.27777099609375,
+            "offsetX": 204.26851654052734
+        }
+    ]
+}
