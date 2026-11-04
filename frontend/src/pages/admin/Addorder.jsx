@@ -55,6 +55,8 @@ export default function AddPartyOrder({ SidebarComponent = Sidebar }) {
   };
 
   const save = async () => {
+    if (!window.confirm("Save this party order?")) return;
+
     setSaving(true);
     setMessage({ text: "", type: "" });
 
