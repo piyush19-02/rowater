@@ -58,6 +58,22 @@ export default function Customers({ SidebarComponent = Sidebar, title = "Custome
     }
   };
 
+  const openBulkWhatsApp = (customerList) => {
+    const recipients = customerList.filter((customer) => customer.mobile && String(customer.mobile).replace(/\D/g, "").length >= 10);
+
+    if (!recipients.length) {
+      return;
+    }
+
+    recipients.forEach((customer) => {
+      const mobile = String(customer.mobile).replace(/\D/g, "");
+      const due = Number(customer.pending_amount || 0);
+      const message = encodeURIComponent(`Namaste ${customer.name}, aapka RO Water ka pending amount ₹${due} hai. Kripya payment kar dein. Dhanyavaad.`);
+      const url = `https://wa.me/91${mobile}?text=${message}`;
+      window.open(url, `whatsapp-${customer.id}`, "noopener,noreferrer");
+    });
+  };
+
 
   useEffect(() => {
     // inline the load logic to avoid setState-in-effect lint warning
@@ -266,6 +282,16 @@ export default function Customers({ SidebarComponent = Sidebar, title = "Custome
             <option value={25}>25 / page</option>
             <option value={50}>50 / page</option>
           </select>
+        </div>
+
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <div className="text-sm text-slate-600">Showing {customers.length} customer{customers.length === 1 ? "" : "s"}</div>
+          {customers.length > 0 && (
+            <button type="button" onClick={() => openBulkWhatsApp(customers)} className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700">
+              <MessageCircle size={16} />
+              Send message to all
+            </button>
+          )}
         </div>
 
         <div className="space-y-3">

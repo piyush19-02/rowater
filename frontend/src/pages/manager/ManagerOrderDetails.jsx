@@ -26,7 +26,7 @@ export default function ManagerOrderDetails() {
   const totalAmount = order && order.order ? (Number(order.order.total_amount) || 0) : (order && order.total_amount ? Number(order.total_amount) : 0);
 
   if (error) return <div className="flex"><ManagerSidebar /><main className="md:ml-60 p-6 w-full"> <p className="text-red-600">{error}</p> </main></div>;
-  if (!order) return <div className="flex"><ManagerSidebar /><main className="md:ml-60 p-6 w-full"> <p>Loading...</p> </main></div>;
+  if (!order) return <div className="flex"><ManagerSidebar /><main className="md:ml-60 p-6 w-full"><p role="status" className="text-slate-500"><span className="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-r-transparent align-[-3px]" />Loading order...</p></main></div>;
 
   const printInvoice = () => {
     const html = `

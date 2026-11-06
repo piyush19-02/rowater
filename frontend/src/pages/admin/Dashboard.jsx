@@ -21,6 +21,21 @@ export default function Dashboard() {
     [item.category_name]: [...(all[item.category_name] || []), item],
   }), {});
 
+  const openBulkWhatsApp = (customers) => {
+    const recipients = customers.filter((customer) => customer.mobile && String(customer.mobile).replace(/\D/g, "").length >= 10);
+
+    if (!recipients.length) {
+      return;
+    }
+
+    recipients.forEach((customer) => {
+      const mobile = String(customer.mobile).replace(/\D/g, "");
+      const message = encodeURIComponent(`Namaste ${customer.name}, aapka RO Water ka pending amount ₹${customer.pending_amount} hai. Kripya payment kar dein.`);
+      const url = `https://wa.me/91${mobile}?text=${message}`;
+      window.open(url, `whatsapp-${customer.id}`, "noopener,noreferrer");
+    });
+  };
+
   return (
     <div className="flex min-h-screen bg-slate-100">
       <Sidebar />
@@ -62,7 +77,15 @@ export default function Dashboard() {
 
         {tab === "monthly" && (
           <section className="space-y-3">
-            <h2 className="text-lg font-bold text-slate-900">Top monthly due customers</h2>
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="text-lg font-bold text-slate-900">Top monthly due customers</h2>
+              {dueCustomers.length > 0 && (
+                <button type="button" onClick={() => openBulkWhatsApp(dueCustomers)} className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700">
+                  <MessageCircle size={16} />
+                  WhatsApp all
+                </button>
+              )}
+            </div>
             {dueCustomers.length ? dueCustomers.map((customer) => {
               const message = encodeURIComponent(`Namaste ${customer.name}, aapka RO Water ka pending amount ₹${customer.pending_amount} hai. Kripya payment kar dein.`);
               return (

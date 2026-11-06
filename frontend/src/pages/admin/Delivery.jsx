@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/set-state-in-effect -- initial API hydration */
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { CalendarDays, CheckCircle2, Droplets, Package, WalletCards } from "lucide-react";
 import Sidebar from "../../components/Sidebar";
@@ -9,10 +8,29 @@ import { useManager } from "../../context/ManagerContext";
 const money = (value) => `₹${Number(value || 0).toLocaleString("en-IN")}`;
 const today = () => new Date().toISOString().slice(0, 10);
 
+function normalizePartyOrder(item) {
+  return {
+    ...item,
+    customerName: item.customer_name ?? item.customerName,
+    eventName: item.event_name ?? item.eventName,
+    date: item.event_date ?? item.date,
+    jar: item.total_jars ?? item.jar ?? 0,
+    liter: item.water_liters ?? item.water_litres ?? item.water ?? item.liter ?? 0,
+    amount: item.total_amount ?? item.amount,
+    pending: item.pending_amount ?? item.pending,
+    pendingReturnJars: item.pending_return_jars ?? item.pendingReturnJars,
+    isParty: true,
+    rate: item.rate ?? item.rate_per_jar ?? "",
+    waterRate: item.water_rate ?? item.waterRate ?? "",
+    rate_per_jar: item.rate_per_jar ?? item.rate ?? 0,
+    water_rate: item.water_rate ?? item.waterRate ?? 0,
+  };
+}
+
 function blankForm(order = {}) {
   return {
     jar: order.jar ?? order.total_jars ?? 0,
-    liter: order.liter ?? 0,
+    liter: order.water_liters ?? order.water_litres ?? order.water ?? order.liter ?? 0,
     // Use pending amount for party order delivery by default, because advance already reduces current due.
     orderAmount: order.pending_amount ?? order.pending ?? order.amount ?? order.total_amount ?? 0,
     // Prefill per-delivery rate from the party order if available so the form shows expected amounts
@@ -38,10 +56,18 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
   const [orders, setOrders] = useState([]);
   const [deliveries] = useState([]);
   const [todayDeliveries, setTodayDeliveries] = useState([]);
+  const [regularLoading, setRegularLoading] = useState(false);
+  const [partyLoading, setPartyLoading] = useState(false);
+  const [orderLoadingId, setOrderLoadingId] = useState(null);
+  const regularRequest = useRef({ loading: false, loaded: false });
+  const partyRequest = useRef({ loading: false, loaded: false });
+  const activeDeliveryId = useRef(null);
+  const requestedOrderOpened = useRef(false);
   const [regularStatus, setRegularStatus] = useState("pending");
   const [error, setError] = useState("");
   const [successToast, setSuccessToast] = useState("");
   const [openId, setOpenId] = useState(null);
+  const [saving, setSaving] = useState(false);
   const [form, setForm] = useState(blankForm());
 
   useEffect(() => {
@@ -50,36 +76,45 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
     return () => window.clearTimeout(timeout);
   }, [successToast]);
 
-  const load = async () => {
+  const loadRegular = useCallback(async (force = false) => {
+    if ((!force && regularRequest.current.loaded) || regularRequest.current.loading) return;
+    regularRequest.current.loading = true;
+    setRegularLoading(true);
+    setError("");
     try {
-      const [customerResult, partyResult, deliveryResult] = await Promise.all([api("/customers"), api("/party-orders"), api("/deliveries?type=regular")]);
+      const [customerResult, deliveryResult] = await Promise.all([api("/customers"), api("/deliveries?type=regular")]);
       setCustomers((customerResult.data || []).map((item) => ({ ...item, shop: item.address, pendingAmount: item.pending_amount, outsideJars: item.outside_jars })));
-      setOrders((partyResult.data || []).map((item) => ({
-  ...item,
-  customerName: item.customer_name,
-  eventName: item.event_name,
-  date: item.event_date,
-  jar: item.total_jars,
-  amount: item.total_amount,
-  pending: item.pending_amount,
-  pendingReturnJars: item.pending_return_jars,
-  isParty: true,
-  // normalize rate fields so delivery form can prefill and calculations can use either naming convention
-  rate: item.rate ?? item.rate_per_jar ?? "",
-  waterRate: item.water_rate ?? item.waterRate ?? "",
-  // ensure compatibility with code paths that expect snake_case
-  rate_per_jar: item.rate_per_jar ?? item.rate ?? 0,
-  water_rate: item.water_rate ?? item.waterRate ?? 0,
-})));
       setTodayDeliveries(deliveryResult.data || []);
-    } catch (requestError) { setError(requestError.message); }
-  };
-  useEffect(() => { load(); }, []);
+      regularRequest.current.loaded = true;
+    } catch (requestError) {
+      setError(requestError.message);
+    } finally {
+      regularRequest.current.loading = false;
+      setRegularLoading(false);
+    }
+  }, []);
+
+  const loadPartyOrders = useCallback(async (force = false) => {
+    if ((!force && partyRequest.current.loaded) || partyRequest.current.loading) return;
+    partyRequest.current.loading = true;
+    setPartyLoading(true);
+    setError("");
+    try {
+      const result = await api("/party-orders");
+      setOrders((result.data || []).map(normalizePartyOrder));
+      partyRequest.current.loaded = true;
+    } catch (requestError) {
+      setError(requestError.message);
+    } finally {
+      partyRequest.current.loading = false;
+      setPartyLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
-    if (!requestedOrderId || !orders.length) return;
-    const order = orders.find((item) => String(item.id) === requestedOrderId);
-    if (order) { setActiveTab("party"); setOpenId(`party-${order.id}`); setForm({ ...blankForm(order), lastDelivery: undefined }); }
-  }, [orders, requestedOrderId]);
+    if (activeTab === "party") loadPartyOrders();
+    else loadRegular();
+  }, [activeTab, loadPartyOrders, loadRegular]);
 
   const partyOrders = useMemo(() => orders.filter((order) => {
     const deliveryDate = order.date || order.event_date;
@@ -92,18 +127,52 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
   const completedCustomerIds = useMemo(() => new Set(todayDeliveries.filter((item) => item.delivery_status === "delivered").map((item) => String(item.customer_id))), [todayDeliveries]);
   const visibleRegularCustomers = useMemo(() => regularCustomers.filter((customer) => regularStatus === "completed" ? completedCustomerIds.has(String(customer.id)) : !completedCustomerIds.has(String(customer.id))), [regularCustomers, regularStatus, completedCustomerIds]);
 
-  const historyFor = (customerId, partyOrderId) => deliveries
+  const historyFor = useCallback((customerId, partyOrderId) => deliveries
     .filter((item) => partyOrderId ? item.partyOrderId === partyOrderId : item.customerId === customerId)
-    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)), [deliveries]);
 
-  const openDelivery = async (item, type) => {
+  const openDelivery = useCallback(async (item, type) => {
+    const deliveryId = `${type}-${item.id}`;
+    activeDeliveryId.current = deliveryId;
+    setOrderLoadingId(type === "party" ? String(item.id) : null);
     const history = historyFor(item.id, type === "party" ? item.id : null);
-    setOpenId(`${type}-${item.id}`);
+    setOpenId(deliveryId);
+    setError("");
     setForm({ ...blankForm(item), lastDelivery: history[0] });
-    if (type === "regular") {
-      try { const result = await api(`/deliveries?customer_id=${item.id}&limit=3&all=1`); setForm((current) => ({ ...current, recentDeliveries: result.data || [] })); } catch { /* current delivery can continue without history */ }
+    if (type === "party") {
+      try {
+        const result = await api(`/party-orders/${item.id}`);
+        if (!result.data?.order) throw new Error("Party order details are unavailable.");
+        const selectedOrder = normalizePartyOrder({ ...item, ...result.data.order });
+        setOrders((current) => current.map((order) => String(order.id) === String(item.id) ? selectedOrder : order));
+        if (activeDeliveryId.current === deliveryId) setForm({ ...blankForm(selectedOrder), lastDelivery: history[0] });
+      } catch (requestError) {
+        if (activeDeliveryId.current === deliveryId) setError(requestError.message);
+      } finally {
+        if (activeDeliveryId.current === deliveryId) setOrderLoadingId(null);
+      }
+    } else {
+      setForm((current) => ({ ...current, recentDeliveriesLoading: true }));
+      try {
+        const result = await api(`/deliveries?customer_id=${item.id}&limit=3&all=1`);
+        if (activeDeliveryId.current === deliveryId) setForm((current) => ({ ...current, recentDeliveries: result.data || [], recentDeliveriesLoading: false }));
+      } catch (requestError) {
+        if (activeDeliveryId.current === deliveryId) {
+          setForm((current) => ({ ...current, recentDeliveriesLoading: false }));
+          setError(requestError.message);
+        }
+      }
     }
-  };
+  }, [historyFor]);
+
+  useEffect(() => {
+    if (!requestedOrderId || !orders.length || requestedOrderOpened.current) return;
+    const order = orders.find((item) => String(item.id) === requestedOrderId);
+    if (order) {
+      requestedOrderOpened.current = true;
+      openDelivery(order, "party");
+    }
+  }, [orders, requestedOrderId, openDelivery]);
 
   const save = async (item, type) => {
     const jar = Math.max(0, Number(form.jar) || 0);
@@ -148,17 +217,25 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
       paymentMode: paymentModeToSend,
       notes: form.notes,
     };
+    setSaving(true);
     try {
       await api("/deliveries", { method: "POST", body: { customer_id: entry.customerId, party_order_id: entry.partyOrderId, manager_id: managerId, delivery_date: entry.deliveryDate, delivered_jars: jar, delivered_water_liters: liter, returned_jars: returnedJars, amount, received_amount: received, payment_mode: entry.paymentMode, remarks: form.notes } });
       setError("");
       setSuccessToast("Delivered successfully.");
-      setOpenId(null); setForm(blankForm()); await load();
+      activeDeliveryId.current = null;
+      setOpenId(null); setForm(blankForm());
+      if (type === "party") await loadPartyOrders(true);
+      else await loadRegular(true);
       if (managerId) {
         refreshSidebarCounts().catch((refreshError) => {
           console.error("Failed to refresh manager sidebar counts:", refreshError);
         });
       }
-    } catch (requestError) { setError(requestError.message); }
+    } catch (requestError) {
+      setError(requestError.message);
+    } finally {
+      setSaving(false);
+    }
   };
 
   const card = (item, type) => {
@@ -178,8 +255,16 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
           <p className="font-bold text-slate-900 truncate">{party ? item.customerName : item.name}</p>
           <p className="mt-1 text-sm text-slate-500 truncate">{party ? `${item.eventName || "Special occasion"} · ${item.date || "Date pending"}` : `${item.shop || item.address || "Address not added"} · ${item.mobile || ""}`}</p>
         </div>
-        <button onClick={() => isOpen ? setOpenId(null) : openDelivery(item, type)} className="shrink-0 rounded-xl bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-700">
-          {isOpen ? "Close" : "Deliver"}
+        <button onClick={() => {
+          if (isOpen) {
+            activeDeliveryId.current = null;
+            setOrderLoadingId(null);
+            setOpenId(null);
+          } else {
+            openDelivery(item, type);
+          }
+        }} className="shrink-0 rounded-xl bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-700" disabled={orderLoadingId === String(item.id)}>
+          {orderLoadingId === String(item.id) ? "Loading..." : isOpen ? "Close" : "Deliver"}
         </button>
       </div>
 
@@ -190,7 +275,9 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
         {last && <span className="rounded-full bg-slate-100 px-2.5 py-1 text-slate-600">Last: {last.deliveryDate} · {last.jar} jar</span>}
       </div>
 
-      {isOpen && <DeliveryForm form={form} setForm={setForm} party={party} requested={{ jar: requestedJar, liter: requestedLiter }} onSave={() => save(item, type)} error={error} />}
+      {isOpen && (party && orderLoadingId === String(item.id)
+        ? <p role="status" className="mt-4 border-t border-slate-100 pt-4 text-sm text-slate-500"><span className="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-r-transparent align-[-3px]" />Loading order details...</p>
+        : <DeliveryForm form={form} setForm={setForm} party={party} requested={{ jar: requestedJar, liter: requestedLiter }} onSave={() => save(item, type)} error={error} saving={saving} />)}
     </article>;
   };
 
@@ -208,19 +295,23 @@ export default function Delivery({ SidebarComponent = Sidebar, managerId }) {
       </header>
       {error && <p className="mb-4 rounded-xl bg-red-50 p-3 text-sm text-red-700">{error}</p>}
       <div className="mb-5 grid grid-cols-2 gap-1 rounded-xl bg-slate-200 p-1">
-        <button onClick={() => { setActiveTab("regular"); setOpenId(null); }} className={`rounded-lg px-3 py-2 text-sm font-bold ${activeTab === "regular" ? "bg-white text-blue-700 shadow" : "text-slate-600"}`}>Delivery pending ({regularCustomers.length - completedCustomerIds.size})</button>
-        <button onClick={() => { setActiveTab("party"); setOpenId(null); }} className={`rounded-lg px-3 py-2 text-sm font-bold ${activeTab === "party" ? "bg-white text-blue-700 shadow" : "text-slate-600"}`}>Party orders ({partyOrders.length})</button>
+        <button onClick={() => { activeDeliveryId.current = null; setOrderLoadingId(null); setActiveTab("regular"); setOpenId(null); }} className={`rounded-lg px-3 py-2 text-sm font-bold ${activeTab === "regular" ? "bg-white text-blue-700 shadow" : "text-slate-600"}`}>Delivery pending ({regularCustomers.length - completedCustomerIds.size})</button>
+        <button onClick={() => { activeDeliveryId.current = null; setOrderLoadingId(null); setActiveTab("party"); setOpenId(null); }} className={`rounded-lg px-3 py-2 text-sm font-bold ${activeTab === "party" ? "bg-white text-blue-700 shadow" : "text-slate-600"}`}>Party orders ({partyLoading ? "..." : partyOrders.length})</button>
       </div>
       {activeTab === "regular" && <div className="mb-4 grid grid-cols-2 rounded-xl bg-slate-200 p-1"><button onClick={() => setRegularStatus("pending")} className={`rounded-lg py-2 text-sm font-bold ${regularStatus === "pending" ? "bg-white text-amber-700 shadow" : "text-slate-600"}`}>Pending ({regularCustomers.length - completedCustomerIds.size})</button><button onClick={() => setRegularStatus("completed")} className={`rounded-lg py-2 text-sm font-bold ${regularStatus === "completed" ? "bg-white text-emerald-700 shadow" : "text-slate-600"}`}>Completed ({completedCustomerIds.size})</button></div>}
       <section className="space-y-3">
-        {(activeTab === "party" ? partyOrders : visibleRegularCustomers).map((item) => card(item, activeTab === "party" ? "party" : "regular"))}
-        {(activeTab === "party" ? partyOrders : visibleRegularCustomers).length === 0 && <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center text-slate-500">Is list mein abhi koi delivery pending nahi hai.</div>}
+        {(activeTab === "party" ? partyLoading : regularLoading)
+          ? <div role="status" className="rounded-2xl bg-white p-8 text-center text-slate-500"><span className="mr-2 inline-block h-5 w-5 animate-spin rounded-full border-2 border-current border-r-transparent align-[-4px]" />Loading {activeTab === "party" ? "party orders" : "deliveries"}...</div>
+          : <>
+            {(activeTab === "party" ? partyOrders : visibleRegularCustomers).map((item) => card(item, activeTab === "party" ? "party" : "regular"))}
+            {(activeTab === "party" ? partyOrders : visibleRegularCustomers).length === 0 && <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center text-slate-500">Is list mein abhi koi delivery pending nahi hai.</div>}
+          </>}
       </section>
     </main>
   </div>;
 }
 
-function DeliveryForm({ form, setForm, party, requested, onSave, error }) {
+function DeliveryForm({ form, setForm, party, requested, onSave, error, saving }) {
   const update = (key, value) => setForm((previous) => ({ ...previous, [key]: value }));
   const jar = Number(form.jar || 0); const liter = Number(form.liter || 0);
   const received = Math.max(0, Number(form.receivedAmount) || 0);
@@ -262,9 +353,10 @@ function DeliveryForm({ form, setForm, party, requested, onSave, error }) {
     <textarea value={form.notes} onChange={(e) => update("notes", e.target.value)} placeholder="Delivery note (optional)" className="input mt-3 min-h-20" />
     {(!chargedAmount || chargedAmount === 0) && <p className="mt-2 text-sm text-slate-600">Rate unknown — delivery will be recorded and jars will be added to customer's pending jars if no payment is made.</p> }
     {!party && form.recentDeliveries?.length > 0 && <div className="mt-3 rounded-xl bg-slate-50 p-3 text-sm"><p className="mb-1 font-bold">Last 3 deliveries</p>{form.recentDeliveries.map((delivery) => <p key={delivery.id}>{delivery.delivery_date} · {delivery.delivered_jars} jar · ₹{delivery.received_amount} received</p>)}</div>}
+    {!party && form.recentDeliveriesLoading && <p role="status" className="mt-3 text-sm text-slate-500"><span className="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-r-transparent align-[-3px]" />Loading recent deliveries...</p>}
     <div className="mt-3 flex items-center justify-between rounded-xl bg-slate-50 p-3 text-sm"><span>{jar} jar · {liter} L</span><span className="font-bold">Order amount {chargedAmount > 0 ? `₹${chargedAmount}` : '—'} · Pending ₹{Math.max(0, chargedAmount - received)}</span></div>
     {error && <p className="mt-3 rounded-xl bg-red-50 p-3 text-sm text-red-700">{error}</p>}
-    <button onClick={onSave} className="mt-3 w-full rounded-xl bg-emerald-600 py-3 font-bold text-white hover:bg-emerald-700">Confirm delivery</button>
+    <button onClick={onSave} disabled={saving} className="mt-3 w-full rounded-xl bg-emerald-600 py-3 font-bold text-white hover:bg-emerald-700 disabled:opacity-70">{saving ? "Saving delivery..." : "Confirm delivery"}</button>
   </div>;
 }
 

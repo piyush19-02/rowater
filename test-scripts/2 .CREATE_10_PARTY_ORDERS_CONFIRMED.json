@@ -12,14 +12,14 @@
         },
         {
             "type": "navigate",
-            "url": "https://testrowater.progset.com/manager",
             "assertedEvents": [
                 {
                     "type": "navigation",
                     "url": "https://testrowater.progset.com/manager",
                     "title": "rowater"
                 }
-            ]
+            ],
+            "url": "https://testrowater.progset.com/manager"
         },
         {
             "type": "click",
@@ -49,12 +49,12 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "offsetY": 27.333328247070312,
-            "offsetX": 91.66665649414062
+            "offsetX": 91.66665649414062,
+            "offsetY": 27.333328247070312
         },
         {
             "type": "change",
-            "value": "PIYUSH TEST 01",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer name *"
@@ -69,7 +69,7 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "target": "main"
+            "value": "PIYUSH TEST 01"
         },
         {
             "type": "click",
@@ -88,12 +88,12 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "offsetY": 26,
-            "offsetX": 254.33333206176758
+            "offsetX": 254.33333206176758,
+            "offsetY": 26
         },
         {
             "type": "change",
-            "value": "9000000001",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Mobile *"
@@ -108,7 +108,7 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "target": "main"
+            "value": "9000000001"
         },
         {
             "type": "click",
@@ -127,12 +127,12 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "offsetY": 20,
-            "offsetX": 121.66665649414062
+            "offsetX": 121.66665649414062,
+            "offsetY": 20
         },
         {
             "type": "change",
-            "value": "DEWAS TEST 01",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer address"
@@ -147,7 +147,7 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "target": "main"
+            "value": "DEWAS TEST 01"
         },
         {
             "type": "click",
@@ -166,12 +166,12 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "offsetY": 8.666656494140625,
-            "offsetX": 142.33333206176758
+            "offsetX": 142.33333206176758,
+            "offsetY": 8.666656494140625
         },
         {
             "type": "change",
-            "value": "TEST PARTY 01",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Event name *"
@@ -186,7 +186,7 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "target": "main"
+            "value": "TEST PARTY 01"
         },
         {
             "type": "click",
@@ -205,8 +205,8 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "click",
@@ -225,13 +225,13 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-12'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-12'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-12'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-12'), 150); })"
         },
         {
             "type": "click",
@@ -250,8 +250,8 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 40,
-            "offsetX": 164.66665649414062
+            "offsetX": 164.66665649414062,
+            "offsetY": 40
         },
         {
             "type": "click",
@@ -270,13 +270,13 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 15,
-            "offsetX": 270.6666564941406
+            "offsetX": 270.6666564941406,
+            "offsetY": 15
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '16:22'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '16:22'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '16:22'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '16:22'), 150); })"
         },
         {
             "type": "click",
@@ -295,12 +295,12 @@
                     "text/Delivery address"
                 ]
             ],
-            "offsetY": 2.875,
-            "offsetX": 317.3333320617676
+            "offsetX": 317.3333320617676,
+            "offsetY": 2.875
         },
         {
             "type": "change",
-            "value": "YADAV MARRIGE GARDEN 01",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Delivery address"
@@ -315,7 +315,7 @@
                     "pierce/label:nth-of-type(9) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "YADAV MARRIGE GARDEN 01"
         },
         {
             "type": "click",
@@ -334,12 +334,12 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "offsetY": 28.541656494140625,
-            "offsetX": 157.33333206176758
+            "offsetX": 157.33333206176758,
+            "offsetY": 28.541656494140625
         },
         {
             "type": "change",
-            "value": "10",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Jar quantity"
@@ -354,7 +354,7 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "target": "main"
+            "value": "10"
         },
         {
             "type": "click",
@@ -373,12 +373,12 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "offsetY": 21.208328247070312,
-            "offsetX": 127.33333206176758
+            "offsetX": 127.33333206176758,
+            "offsetY": 21.208328247070312
         },
         {
             "type": "change",
-            "value": "10",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Water quantity (litres)"
@@ -393,7 +393,7 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "target": "main"
+            "value": "10"
         },
         {
             "type": "click",
@@ -412,12 +412,12 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "offsetY": 27.875,
-            "offsetX": 109.33333206176758
+            "offsetX": 109.33333206176758,
+            "offsetY": 27.875
         },
         {
             "type": "change",
-            "value": "500",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Advance / received now"
@@ -432,7 +432,7 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "target": "main"
+            "value": "500"
         },
         {
             "type": "click",
@@ -451,12 +451,12 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "offsetY": 30.541656494140625,
-            "offsetX": 166.33333206176758
+            "offsetX": 166.33333206176758,
+            "offsetY": 30.541656494140625
         },
         {
             "type": "change",
-            "value": "TEST ORDER 01",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Remarks"
@@ -471,7 +471,7 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "TEST ORDER 01"
         },
         {
             "type": "click",
@@ -493,13 +493,26 @@
                     "text/Save party order"
                 ]
             ],
-            "offsetY": 15.541656494140625,
-            "offsetX": 299.3333320617676
+            "offsetX": 299.3333320617676,
+            "offsetY": 15.541656494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "aria/Yes, save order",
+                "#root > div > div button.bg-blue-600",
+                "xpath///*[@id=\"root\"]/div/div/section/div/button[2]",
+                "pierce/#root > div > div button.bg-blue-600",
+                "text/Yes, save order"
+            ],
+            "offsetX": 72.29165649414062,
+            "offsetY": 12.974517822265625
         },
         {
             "type": "waitForExpression",
-            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''"
         },
         {
             "type": "click",
@@ -518,12 +531,12 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "offsetY": 27.333328247070312,
-            "offsetX": 91.66665649414062
+            "offsetX": 91.66665649414062,
+            "offsetY": 27.333328247070312
         },
         {
             "type": "change",
-            "value": "PIYUSH TEST 02",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer name *"
@@ -538,7 +551,7 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "target": "main"
+            "value": "PIYUSH TEST 02"
         },
         {
             "type": "click",
@@ -557,12 +570,12 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "offsetY": 26,
-            "offsetX": 254.33333206176758
+            "offsetX": 254.33333206176758,
+            "offsetY": 26
         },
         {
             "type": "change",
-            "value": "9000000002",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Mobile *"
@@ -577,7 +590,7 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "target": "main"
+            "value": "9000000002"
         },
         {
             "type": "click",
@@ -596,12 +609,12 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "offsetY": 20,
-            "offsetX": 121.66665649414062
+            "offsetX": 121.66665649414062,
+            "offsetY": 20
         },
         {
             "type": "change",
-            "value": "DEWAS TEST 02",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer address"
@@ -616,7 +629,7 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "target": "main"
+            "value": "DEWAS TEST 02"
         },
         {
             "type": "click",
@@ -635,12 +648,12 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "offsetY": 8.666656494140625,
-            "offsetX": 142.33333206176758
+            "offsetX": 142.33333206176758,
+            "offsetY": 8.666656494140625
         },
         {
             "type": "change",
-            "value": "TEST PARTY 02",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Event name *"
@@ -655,7 +668,7 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "target": "main"
+            "value": "TEST PARTY 02"
         },
         {
             "type": "click",
@@ -674,8 +687,8 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "click",
@@ -694,13 +707,13 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-13'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-13'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-13'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-13'), 150); })"
         },
         {
             "type": "click",
@@ -719,8 +732,8 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 40,
-            "offsetX": 164.66665649414062
+            "offsetX": 164.66665649414062,
+            "offsetY": 40
         },
         {
             "type": "click",
@@ -739,13 +752,13 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 15,
-            "offsetX": 270.6666564941406
+            "offsetX": 270.6666564941406,
+            "offsetY": 15
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '16:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '16:30'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '16:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '16:30'), 150); })"
         },
         {
             "type": "click",
@@ -764,12 +777,12 @@
                     "text/Delivery address"
                 ]
             ],
-            "offsetY": 2.875,
-            "offsetX": 317.3333320617676
+            "offsetX": 317.3333320617676,
+            "offsetY": 2.875
         },
         {
             "type": "change",
-            "value": "YADAV MARRIGE GARDEN 02",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Delivery address"
@@ -784,7 +797,7 @@
                     "pierce/label:nth-of-type(9) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "YADAV MARRIGE GARDEN 02"
         },
         {
             "type": "click",
@@ -803,12 +816,12 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "offsetY": 28.541656494140625,
-            "offsetX": 157.33333206176758
+            "offsetX": 157.33333206176758,
+            "offsetY": 28.541656494140625
         },
         {
             "type": "change",
-            "value": "11",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Jar quantity"
@@ -823,7 +836,7 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "target": "main"
+            "value": "11"
         },
         {
             "type": "click",
@@ -842,12 +855,12 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "offsetY": 21.208328247070312,
-            "offsetX": 127.33333206176758
+            "offsetX": 127.33333206176758,
+            "offsetY": 21.208328247070312
         },
         {
             "type": "change",
-            "value": "12",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Water quantity (litres)"
@@ -862,7 +875,7 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "target": "main"
+            "value": "12"
         },
         {
             "type": "click",
@@ -881,12 +894,12 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "offsetY": 27.875,
-            "offsetX": 109.33333206176758
+            "offsetX": 109.33333206176758,
+            "offsetY": 27.875
         },
         {
             "type": "change",
-            "value": "550",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Advance / received now"
@@ -901,7 +914,7 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "target": "main"
+            "value": "550"
         },
         {
             "type": "click",
@@ -920,12 +933,12 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "offsetY": 30.541656494140625,
-            "offsetX": 166.33333206176758
+            "offsetX": 166.33333206176758,
+            "offsetY": 30.541656494140625
         },
         {
             "type": "change",
-            "value": "TEST ORDER 02",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Remarks"
@@ -940,7 +953,7 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "TEST ORDER 02"
         },
         {
             "type": "click",
@@ -962,13 +975,26 @@
                     "text/Save party order"
                 ]
             ],
-            "offsetY": 15.541656494140625,
-            "offsetX": 299.3333320617676
+            "offsetX": 299.3333320617676,
+            "offsetY": 15.541656494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "aria/Yes, save order",
+                "#root > div > div button.bg-blue-600",
+                "xpath///*[@id=\"root\"]/div/div/section/div/button[2]",
+                "pierce/#root > div > div button.bg-blue-600",
+                "text/Yes, save order"
+            ],
+            "offsetX": 72.29165649414062,
+            "offsetY": 12.974517822265625
         },
         {
             "type": "waitForExpression",
-            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''"
         },
         {
             "type": "click",
@@ -987,12 +1013,12 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "offsetY": 27.333328247070312,
-            "offsetX": 91.66665649414062
+            "offsetX": 91.66665649414062,
+            "offsetY": 27.333328247070312
         },
         {
             "type": "change",
-            "value": "PIYUSH TEST 03",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer name *"
@@ -1007,7 +1033,7 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "target": "main"
+            "value": "PIYUSH TEST 03"
         },
         {
             "type": "click",
@@ -1026,12 +1052,12 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "offsetY": 26,
-            "offsetX": 254.33333206176758
+            "offsetX": 254.33333206176758,
+            "offsetY": 26
         },
         {
             "type": "change",
-            "value": "9000000003",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Mobile *"
@@ -1046,7 +1072,7 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "target": "main"
+            "value": "9000000003"
         },
         {
             "type": "click",
@@ -1065,12 +1091,12 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "offsetY": 20,
-            "offsetX": 121.66665649414062
+            "offsetX": 121.66665649414062,
+            "offsetY": 20
         },
         {
             "type": "change",
-            "value": "DEWAS TEST 03",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer address"
@@ -1085,7 +1111,7 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "target": "main"
+            "value": "DEWAS TEST 03"
         },
         {
             "type": "click",
@@ -1104,12 +1130,12 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "offsetY": 8.666656494140625,
-            "offsetX": 142.33333206176758
+            "offsetX": 142.33333206176758,
+            "offsetY": 8.666656494140625
         },
         {
             "type": "change",
-            "value": "TEST PARTY 03",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Event name *"
@@ -1124,7 +1150,7 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "target": "main"
+            "value": "TEST PARTY 03"
         },
         {
             "type": "click",
@@ -1143,8 +1169,8 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "click",
@@ -1163,13 +1189,13 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-14'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-14'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-14'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-14'), 150); })"
         },
         {
             "type": "click",
@@ -1188,8 +1214,8 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 40,
-            "offsetX": 164.66665649414062
+            "offsetX": 164.66665649414062,
+            "offsetY": 40
         },
         {
             "type": "click",
@@ -1208,13 +1234,13 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 15,
-            "offsetX": 270.6666564941406
+            "offsetX": 270.6666564941406,
+            "offsetY": 15
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '17:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '17:00'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '17:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '17:00'), 150); })"
         },
         {
             "type": "click",
@@ -1233,12 +1259,12 @@
                     "text/Delivery address"
                 ]
             ],
-            "offsetY": 2.875,
-            "offsetX": 317.3333320617676
+            "offsetX": 317.3333320617676,
+            "offsetY": 2.875
         },
         {
             "type": "change",
-            "value": "YADAV MARRIGE GARDEN 03",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Delivery address"
@@ -1253,7 +1279,7 @@
                     "pierce/label:nth-of-type(9) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "YADAV MARRIGE GARDEN 03"
         },
         {
             "type": "click",
@@ -1272,12 +1298,12 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "offsetY": 28.541656494140625,
-            "offsetX": 157.33333206176758
+            "offsetX": 157.33333206176758,
+            "offsetY": 28.541656494140625
         },
         {
             "type": "change",
-            "value": "12",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Jar quantity"
@@ -1292,7 +1318,7 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "target": "main"
+            "value": "12"
         },
         {
             "type": "click",
@@ -1311,12 +1337,12 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "offsetY": 21.208328247070312,
-            "offsetX": 127.33333206176758
+            "offsetX": 127.33333206176758,
+            "offsetY": 21.208328247070312
         },
         {
             "type": "change",
-            "value": "14",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Water quantity (litres)"
@@ -1331,7 +1357,7 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "target": "main"
+            "value": "14"
         },
         {
             "type": "click",
@@ -1350,12 +1376,12 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "offsetY": 27.875,
-            "offsetX": 109.33333206176758
+            "offsetX": 109.33333206176758,
+            "offsetY": 27.875
         },
         {
             "type": "change",
-            "value": "600",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Advance / received now"
@@ -1370,7 +1396,7 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "target": "main"
+            "value": "600"
         },
         {
             "type": "click",
@@ -1389,12 +1415,12 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "offsetY": 30.541656494140625,
-            "offsetX": 166.33333206176758
+            "offsetX": 166.33333206176758,
+            "offsetY": 30.541656494140625
         },
         {
             "type": "change",
-            "value": "TEST ORDER 03",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Remarks"
@@ -1409,7 +1435,7 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "TEST ORDER 03"
         },
         {
             "type": "click",
@@ -1431,13 +1457,26 @@
                     "text/Save party order"
                 ]
             ],
-            "offsetY": 15.541656494140625,
-            "offsetX": 299.3333320617676
+            "offsetX": 299.3333320617676,
+            "offsetY": 15.541656494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "aria/Yes, save order",
+                "#root > div > div button.bg-blue-600",
+                "xpath///*[@id=\"root\"]/div/div/section/div/button[2]",
+                "pierce/#root > div > div button.bg-blue-600",
+                "text/Yes, save order"
+            ],
+            "offsetX": 72.29165649414062,
+            "offsetY": 12.974517822265625
         },
         {
             "type": "waitForExpression",
-            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''"
         },
         {
             "type": "click",
@@ -1456,12 +1495,12 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "offsetY": 27.333328247070312,
-            "offsetX": 91.66665649414062
+            "offsetX": 91.66665649414062,
+            "offsetY": 27.333328247070312
         },
         {
             "type": "change",
-            "value": "PIYUSH TEST 04",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer name *"
@@ -1476,7 +1515,7 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "target": "main"
+            "value": "PIYUSH TEST 04"
         },
         {
             "type": "click",
@@ -1495,12 +1534,12 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "offsetY": 26,
-            "offsetX": 254.33333206176758
+            "offsetX": 254.33333206176758,
+            "offsetY": 26
         },
         {
             "type": "change",
-            "value": "9000000004",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Mobile *"
@@ -1515,7 +1554,7 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "target": "main"
+            "value": "9000000004"
         },
         {
             "type": "click",
@@ -1534,12 +1573,12 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "offsetY": 20,
-            "offsetX": 121.66665649414062
+            "offsetX": 121.66665649414062,
+            "offsetY": 20
         },
         {
             "type": "change",
-            "value": "DEWAS TEST 04",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer address"
@@ -1554,7 +1593,7 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "target": "main"
+            "value": "DEWAS TEST 04"
         },
         {
             "type": "click",
@@ -1573,12 +1612,12 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "offsetY": 8.666656494140625,
-            "offsetX": 142.33333206176758
+            "offsetX": 142.33333206176758,
+            "offsetY": 8.666656494140625
         },
         {
             "type": "change",
-            "value": "TEST PARTY 04",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Event name *"
@@ -1593,7 +1632,7 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "target": "main"
+            "value": "TEST PARTY 04"
         },
         {
             "type": "click",
@@ -1612,8 +1651,8 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "click",
@@ -1632,13 +1671,13 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-15'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-15'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-15'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-15'), 150); })"
         },
         {
             "type": "click",
@@ -1657,8 +1696,8 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 40,
-            "offsetX": 164.66665649414062
+            "offsetX": 164.66665649414062,
+            "offsetY": 40
         },
         {
             "type": "click",
@@ -1677,13 +1716,13 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 15,
-            "offsetX": 270.6666564941406
+            "offsetX": 270.6666564941406,
+            "offsetY": 15
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '17:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '17:30'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '17:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '17:30'), 150); })"
         },
         {
             "type": "click",
@@ -1702,12 +1741,12 @@
                     "text/Delivery address"
                 ]
             ],
-            "offsetY": 2.875,
-            "offsetX": 317.3333320617676
+            "offsetX": 317.3333320617676,
+            "offsetY": 2.875
         },
         {
             "type": "change",
-            "value": "YADAV MARRIGE GARDEN 04",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Delivery address"
@@ -1722,7 +1761,7 @@
                     "pierce/label:nth-of-type(9) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "YADAV MARRIGE GARDEN 04"
         },
         {
             "type": "click",
@@ -1741,12 +1780,12 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "offsetY": 28.541656494140625,
-            "offsetX": 157.33333206176758
+            "offsetX": 157.33333206176758,
+            "offsetY": 28.541656494140625
         },
         {
             "type": "change",
-            "value": "13",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Jar quantity"
@@ -1761,7 +1800,7 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "target": "main"
+            "value": "13"
         },
         {
             "type": "click",
@@ -1780,12 +1819,12 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "offsetY": 21.208328247070312,
-            "offsetX": 127.33333206176758
+            "offsetX": 127.33333206176758,
+            "offsetY": 21.208328247070312
         },
         {
             "type": "change",
-            "value": "16",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Water quantity (litres)"
@@ -1800,7 +1839,7 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "target": "main"
+            "value": "16"
         },
         {
             "type": "click",
@@ -1819,12 +1858,12 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "offsetY": 27.875,
-            "offsetX": 109.33333206176758
+            "offsetX": 109.33333206176758,
+            "offsetY": 27.875
         },
         {
             "type": "change",
-            "value": "650",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Advance / received now"
@@ -1839,7 +1878,7 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "target": "main"
+            "value": "650"
         },
         {
             "type": "click",
@@ -1858,12 +1897,12 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "offsetY": 30.541656494140625,
-            "offsetX": 166.33333206176758
+            "offsetX": 166.33333206176758,
+            "offsetY": 30.541656494140625
         },
         {
             "type": "change",
-            "value": "TEST ORDER 04",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Remarks"
@@ -1878,7 +1917,7 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "TEST ORDER 04"
         },
         {
             "type": "click",
@@ -1900,13 +1939,26 @@
                     "text/Save party order"
                 ]
             ],
-            "offsetY": 15.541656494140625,
-            "offsetX": 299.3333320617676
+            "offsetX": 299.3333320617676,
+            "offsetY": 15.541656494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "aria/Yes, save order",
+                "#root > div > div button.bg-blue-600",
+                "xpath///*[@id=\"root\"]/div/div/section/div/button[2]",
+                "pierce/#root > div > div button.bg-blue-600",
+                "text/Yes, save order"
+            ],
+            "offsetX": 72.29165649414062,
+            "offsetY": 12.974517822265625
         },
         {
             "type": "waitForExpression",
-            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''"
         },
         {
             "type": "click",
@@ -1925,12 +1977,12 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "offsetY": 27.333328247070312,
-            "offsetX": 91.66665649414062
+            "offsetX": 91.66665649414062,
+            "offsetY": 27.333328247070312
         },
         {
             "type": "change",
-            "value": "PIYUSH TEST 05",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer name *"
@@ -1945,7 +1997,7 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "target": "main"
+            "value": "PIYUSH TEST 05"
         },
         {
             "type": "click",
@@ -1964,12 +2016,12 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "offsetY": 26,
-            "offsetX": 254.33333206176758
+            "offsetX": 254.33333206176758,
+            "offsetY": 26
         },
         {
             "type": "change",
-            "value": "9000000005",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Mobile *"
@@ -1984,7 +2036,7 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "target": "main"
+            "value": "9000000005"
         },
         {
             "type": "click",
@@ -2003,12 +2055,12 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "offsetY": 20,
-            "offsetX": 121.66665649414062
+            "offsetX": 121.66665649414062,
+            "offsetY": 20
         },
         {
             "type": "change",
-            "value": "DEWAS TEST 05",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer address"
@@ -2023,7 +2075,7 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "target": "main"
+            "value": "DEWAS TEST 05"
         },
         {
             "type": "click",
@@ -2042,12 +2094,12 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "offsetY": 8.666656494140625,
-            "offsetX": 142.33333206176758
+            "offsetX": 142.33333206176758,
+            "offsetY": 8.666656494140625
         },
         {
             "type": "change",
-            "value": "TEST PARTY 05",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Event name *"
@@ -2062,7 +2114,7 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "target": "main"
+            "value": "TEST PARTY 05"
         },
         {
             "type": "click",
@@ -2081,8 +2133,8 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "click",
@@ -2101,13 +2153,13 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-16'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-16'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-16'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-16'), 150); })"
         },
         {
             "type": "click",
@@ -2126,8 +2178,8 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 40,
-            "offsetX": 164.66665649414062
+            "offsetX": 164.66665649414062,
+            "offsetY": 40
         },
         {
             "type": "click",
@@ -2146,13 +2198,13 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 15,
-            "offsetX": 270.6666564941406
+            "offsetX": 270.6666564941406,
+            "offsetY": 15
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '18:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '18:00'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '18:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '18:00'), 150); })"
         },
         {
             "type": "click",
@@ -2171,12 +2223,12 @@
                     "text/Delivery address"
                 ]
             ],
-            "offsetY": 2.875,
-            "offsetX": 317.3333320617676
+            "offsetX": 317.3333320617676,
+            "offsetY": 2.875
         },
         {
             "type": "change",
-            "value": "YADAV MARRIGE GARDEN 05",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Delivery address"
@@ -2191,7 +2243,7 @@
                     "pierce/label:nth-of-type(9) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "YADAV MARRIGE GARDEN 05"
         },
         {
             "type": "click",
@@ -2210,12 +2262,12 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "offsetY": 28.541656494140625,
-            "offsetX": 157.33333206176758
+            "offsetX": 157.33333206176758,
+            "offsetY": 28.541656494140625
         },
         {
             "type": "change",
-            "value": "14",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Jar quantity"
@@ -2230,7 +2282,7 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "target": "main"
+            "value": "14"
         },
         {
             "type": "click",
@@ -2249,12 +2301,12 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "offsetY": 21.208328247070312,
-            "offsetX": 127.33333206176758
+            "offsetX": 127.33333206176758,
+            "offsetY": 21.208328247070312
         },
         {
             "type": "change",
-            "value": "18",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Water quantity (litres)"
@@ -2269,7 +2321,7 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "target": "main"
+            "value": "18"
         },
         {
             "type": "click",
@@ -2288,12 +2340,12 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "offsetY": 27.875,
-            "offsetX": 109.33333206176758
+            "offsetX": 109.33333206176758,
+            "offsetY": 27.875
         },
         {
             "type": "change",
-            "value": "700",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Advance / received now"
@@ -2308,7 +2360,7 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "target": "main"
+            "value": "700"
         },
         {
             "type": "click",
@@ -2327,12 +2379,12 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "offsetY": 30.541656494140625,
-            "offsetX": 166.33333206176758
+            "offsetX": 166.33333206176758,
+            "offsetY": 30.541656494140625
         },
         {
             "type": "change",
-            "value": "TEST ORDER 05",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Remarks"
@@ -2347,7 +2399,7 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "TEST ORDER 05"
         },
         {
             "type": "click",
@@ -2369,13 +2421,26 @@
                     "text/Save party order"
                 ]
             ],
-            "offsetY": 15.541656494140625,
-            "offsetX": 299.3333320617676
+            "offsetX": 299.3333320617676,
+            "offsetY": 15.541656494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "aria/Yes, save order",
+                "#root > div > div button.bg-blue-600",
+                "xpath///*[@id=\"root\"]/div/div/section/div/button[2]",
+                "pierce/#root > div > div button.bg-blue-600",
+                "text/Yes, save order"
+            ],
+            "offsetX": 72.29165649414062,
+            "offsetY": 12.974517822265625
         },
         {
             "type": "waitForExpression",
-            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''"
         },
         {
             "type": "click",
@@ -2394,12 +2459,12 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "offsetY": 27.333328247070312,
-            "offsetX": 91.66665649414062
+            "offsetX": 91.66665649414062,
+            "offsetY": 27.333328247070312
         },
         {
             "type": "change",
-            "value": "PIYUSH TEST 06",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer name *"
@@ -2414,7 +2479,7 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "target": "main"
+            "value": "PIYUSH TEST 06"
         },
         {
             "type": "click",
@@ -2433,12 +2498,12 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "offsetY": 26,
-            "offsetX": 254.33333206176758
+            "offsetX": 254.33333206176758,
+            "offsetY": 26
         },
         {
             "type": "change",
-            "value": "9000000006",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Mobile *"
@@ -2453,7 +2518,7 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "target": "main"
+            "value": "9000000006"
         },
         {
             "type": "click",
@@ -2472,12 +2537,12 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "offsetY": 20,
-            "offsetX": 121.66665649414062
+            "offsetX": 121.66665649414062,
+            "offsetY": 20
         },
         {
             "type": "change",
-            "value": "DEWAS TEST 06",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer address"
@@ -2492,7 +2557,7 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "target": "main"
+            "value": "DEWAS TEST 06"
         },
         {
             "type": "click",
@@ -2511,12 +2576,12 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "offsetY": 8.666656494140625,
-            "offsetX": 142.33333206176758
+            "offsetX": 142.33333206176758,
+            "offsetY": 8.666656494140625
         },
         {
             "type": "change",
-            "value": "TEST PARTY 06",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Event name *"
@@ -2531,7 +2596,7 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "target": "main"
+            "value": "TEST PARTY 06"
         },
         {
             "type": "click",
@@ -2550,8 +2615,8 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "click",
@@ -2570,13 +2635,13 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-17'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-17'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-17'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-17'), 150); })"
         },
         {
             "type": "click",
@@ -2595,8 +2660,8 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 40,
-            "offsetX": 164.66665649414062
+            "offsetX": 164.66665649414062,
+            "offsetY": 40
         },
         {
             "type": "click",
@@ -2615,13 +2680,13 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 15,
-            "offsetX": 270.6666564941406
+            "offsetX": 270.6666564941406,
+            "offsetY": 15
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '18:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '18:30'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '18:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '18:30'), 150); })"
         },
         {
             "type": "click",
@@ -2640,12 +2705,12 @@
                     "text/Delivery address"
                 ]
             ],
-            "offsetY": 2.875,
-            "offsetX": 317.3333320617676
+            "offsetX": 317.3333320617676,
+            "offsetY": 2.875
         },
         {
             "type": "change",
-            "value": "YADAV MARRIGE GARDEN 06",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Delivery address"
@@ -2660,7 +2725,7 @@
                     "pierce/label:nth-of-type(9) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "YADAV MARRIGE GARDEN 06"
         },
         {
             "type": "click",
@@ -2679,12 +2744,12 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "offsetY": 28.541656494140625,
-            "offsetX": 157.33333206176758
+            "offsetX": 157.33333206176758,
+            "offsetY": 28.541656494140625
         },
         {
             "type": "change",
-            "value": "15",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Jar quantity"
@@ -2699,7 +2764,7 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "target": "main"
+            "value": "15"
         },
         {
             "type": "click",
@@ -2718,12 +2783,12 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "offsetY": 21.208328247070312,
-            "offsetX": 127.33333206176758
+            "offsetX": 127.33333206176758,
+            "offsetY": 21.208328247070312
         },
         {
             "type": "change",
-            "value": "20",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Water quantity (litres)"
@@ -2738,7 +2803,7 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "target": "main"
+            "value": "20"
         },
         {
             "type": "click",
@@ -2757,12 +2822,12 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "offsetY": 27.875,
-            "offsetX": 109.33333206176758
+            "offsetX": 109.33333206176758,
+            "offsetY": 27.875
         },
         {
             "type": "change",
-            "value": "750",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Advance / received now"
@@ -2777,7 +2842,7 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "target": "main"
+            "value": "750"
         },
         {
             "type": "click",
@@ -2796,12 +2861,12 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "offsetY": 30.541656494140625,
-            "offsetX": 166.33333206176758
+            "offsetX": 166.33333206176758,
+            "offsetY": 30.541656494140625
         },
         {
             "type": "change",
-            "value": "TEST ORDER 06",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Remarks"
@@ -2816,7 +2881,7 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "TEST ORDER 06"
         },
         {
             "type": "click",
@@ -2838,13 +2903,26 @@
                     "text/Save party order"
                 ]
             ],
-            "offsetY": 15.541656494140625,
-            "offsetX": 299.3333320617676
+            "offsetX": 299.3333320617676,
+            "offsetY": 15.541656494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "aria/Yes, save order",
+                "#root > div > div button.bg-blue-600",
+                "xpath///*[@id=\"root\"]/div/div/section/div/button[2]",
+                "pierce/#root > div > div button.bg-blue-600",
+                "text/Yes, save order"
+            ],
+            "offsetX": 72.29165649414062,
+            "offsetY": 12.974517822265625
         },
         {
             "type": "waitForExpression",
-            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''"
         },
         {
             "type": "click",
@@ -2863,12 +2941,12 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "offsetY": 27.333328247070312,
-            "offsetX": 91.66665649414062
+            "offsetX": 91.66665649414062,
+            "offsetY": 27.333328247070312
         },
         {
             "type": "change",
-            "value": "PIYUSH TEST 07",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer name *"
@@ -2883,7 +2961,7 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "target": "main"
+            "value": "PIYUSH TEST 07"
         },
         {
             "type": "click",
@@ -2902,12 +2980,12 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "offsetY": 26,
-            "offsetX": 254.33333206176758
+            "offsetX": 254.33333206176758,
+            "offsetY": 26
         },
         {
             "type": "change",
-            "value": "9000000007",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Mobile *"
@@ -2922,7 +3000,7 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "target": "main"
+            "value": "9000000007"
         },
         {
             "type": "click",
@@ -2941,12 +3019,12 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "offsetY": 20,
-            "offsetX": 121.66665649414062
+            "offsetX": 121.66665649414062,
+            "offsetY": 20
         },
         {
             "type": "change",
-            "value": "DEWAS TEST 07",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer address"
@@ -2961,7 +3039,7 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "target": "main"
+            "value": "DEWAS TEST 07"
         },
         {
             "type": "click",
@@ -2980,12 +3058,12 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "offsetY": 8.666656494140625,
-            "offsetX": 142.33333206176758
+            "offsetX": 142.33333206176758,
+            "offsetY": 8.666656494140625
         },
         {
             "type": "change",
-            "value": "TEST PARTY 07",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Event name *"
@@ -3000,7 +3078,7 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "target": "main"
+            "value": "TEST PARTY 07"
         },
         {
             "type": "click",
@@ -3019,8 +3097,8 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "click",
@@ -3039,13 +3117,13 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-18'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-18'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-18'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-18'), 150); })"
         },
         {
             "type": "click",
@@ -3064,8 +3142,8 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 40,
-            "offsetX": 164.66665649414062
+            "offsetX": 164.66665649414062,
+            "offsetY": 40
         },
         {
             "type": "click",
@@ -3084,13 +3162,13 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 15,
-            "offsetX": 270.6666564941406
+            "offsetX": 270.6666564941406,
+            "offsetY": 15
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '19:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '19:00'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '19:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '19:00'), 150); })"
         },
         {
             "type": "click",
@@ -3109,12 +3187,12 @@
                     "text/Delivery address"
                 ]
             ],
-            "offsetY": 2.875,
-            "offsetX": 317.3333320617676
+            "offsetX": 317.3333320617676,
+            "offsetY": 2.875
         },
         {
             "type": "change",
-            "value": "YADAV MARRIGE GARDEN 07",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Delivery address"
@@ -3129,7 +3207,7 @@
                     "pierce/label:nth-of-type(9) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "YADAV MARRIGE GARDEN 07"
         },
         {
             "type": "click",
@@ -3148,12 +3226,12 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "offsetY": 28.541656494140625,
-            "offsetX": 157.33333206176758
+            "offsetX": 157.33333206176758,
+            "offsetY": 28.541656494140625
         },
         {
             "type": "change",
-            "value": "16",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Jar quantity"
@@ -3168,7 +3246,7 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "target": "main"
+            "value": "16"
         },
         {
             "type": "click",
@@ -3187,12 +3265,12 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "offsetY": 21.208328247070312,
-            "offsetX": 127.33333206176758
+            "offsetX": 127.33333206176758,
+            "offsetY": 21.208328247070312
         },
         {
             "type": "change",
-            "value": "22",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Water quantity (litres)"
@@ -3207,7 +3285,7 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "target": "main"
+            "value": "22"
         },
         {
             "type": "click",
@@ -3226,12 +3304,12 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "offsetY": 27.875,
-            "offsetX": 109.33333206176758
+            "offsetX": 109.33333206176758,
+            "offsetY": 27.875
         },
         {
             "type": "change",
-            "value": "800",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Advance / received now"
@@ -3246,7 +3324,7 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "target": "main"
+            "value": "800"
         },
         {
             "type": "click",
@@ -3265,12 +3343,12 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "offsetY": 30.541656494140625,
-            "offsetX": 166.33333206176758
+            "offsetX": 166.33333206176758,
+            "offsetY": 30.541656494140625
         },
         {
             "type": "change",
-            "value": "TEST ORDER 07",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Remarks"
@@ -3285,7 +3363,7 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "TEST ORDER 07"
         },
         {
             "type": "click",
@@ -3307,13 +3385,26 @@
                     "text/Save party order"
                 ]
             ],
-            "offsetY": 15.541656494140625,
-            "offsetX": 299.3333320617676
+            "offsetX": 299.3333320617676,
+            "offsetY": 15.541656494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "aria/Yes, save order",
+                "#root > div > div button.bg-blue-600",
+                "xpath///*[@id=\"root\"]/div/div/section/div/button[2]",
+                "pierce/#root > div > div button.bg-blue-600",
+                "text/Yes, save order"
+            ],
+            "offsetX": 72.29165649414062,
+            "offsetY": 12.974517822265625
         },
         {
             "type": "waitForExpression",
-            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''"
         },
         {
             "type": "click",
@@ -3332,12 +3423,12 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "offsetY": 27.333328247070312,
-            "offsetX": 91.66665649414062
+            "offsetX": 91.66665649414062,
+            "offsetY": 27.333328247070312
         },
         {
             "type": "change",
-            "value": "PIYUSH TEST 08",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer name *"
@@ -3352,7 +3443,7 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "target": "main"
+            "value": "PIYUSH TEST 08"
         },
         {
             "type": "click",
@@ -3371,12 +3462,12 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "offsetY": 26,
-            "offsetX": 254.33333206176758
+            "offsetX": 254.33333206176758,
+            "offsetY": 26
         },
         {
             "type": "change",
-            "value": "9000000008",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Mobile *"
@@ -3391,7 +3482,7 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "target": "main"
+            "value": "9000000008"
         },
         {
             "type": "click",
@@ -3410,12 +3501,12 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "offsetY": 20,
-            "offsetX": 121.66665649414062
+            "offsetX": 121.66665649414062,
+            "offsetY": 20
         },
         {
             "type": "change",
-            "value": "DEWAS TEST 08",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer address"
@@ -3430,7 +3521,7 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "target": "main"
+            "value": "DEWAS TEST 08"
         },
         {
             "type": "click",
@@ -3449,12 +3540,12 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "offsetY": 8.666656494140625,
-            "offsetX": 142.33333206176758
+            "offsetX": 142.33333206176758,
+            "offsetY": 8.666656494140625
         },
         {
             "type": "change",
-            "value": "TEST PARTY 08",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Event name *"
@@ -3469,7 +3560,7 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "target": "main"
+            "value": "TEST PARTY 08"
         },
         {
             "type": "click",
@@ -3488,8 +3579,8 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "click",
@@ -3508,13 +3599,13 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-19'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-19'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-19'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-19'), 150); })"
         },
         {
             "type": "click",
@@ -3533,8 +3624,8 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 40,
-            "offsetX": 164.66665649414062
+            "offsetX": 164.66665649414062,
+            "offsetY": 40
         },
         {
             "type": "click",
@@ -3553,13 +3644,13 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 15,
-            "offsetX": 270.6666564941406
+            "offsetX": 270.6666564941406,
+            "offsetY": 15
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '19:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '19:30'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '19:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '19:30'), 150); })"
         },
         {
             "type": "click",
@@ -3578,12 +3669,12 @@
                     "text/Delivery address"
                 ]
             ],
-            "offsetY": 2.875,
-            "offsetX": 317.3333320617676
+            "offsetX": 317.3333320617676,
+            "offsetY": 2.875
         },
         {
             "type": "change",
-            "value": "YADAV MARRIGE GARDEN 08",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Delivery address"
@@ -3598,7 +3689,7 @@
                     "pierce/label:nth-of-type(9) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "YADAV MARRIGE GARDEN 08"
         },
         {
             "type": "click",
@@ -3617,12 +3708,12 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "offsetY": 28.541656494140625,
-            "offsetX": 157.33333206176758
+            "offsetX": 157.33333206176758,
+            "offsetY": 28.541656494140625
         },
         {
             "type": "change",
-            "value": "17",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Jar quantity"
@@ -3637,7 +3728,7 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "target": "main"
+            "value": "17"
         },
         {
             "type": "click",
@@ -3656,12 +3747,12 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "offsetY": 21.208328247070312,
-            "offsetX": 127.33333206176758
+            "offsetX": 127.33333206176758,
+            "offsetY": 21.208328247070312
         },
         {
             "type": "change",
-            "value": "24",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Water quantity (litres)"
@@ -3676,7 +3767,7 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "target": "main"
+            "value": "24"
         },
         {
             "type": "click",
@@ -3695,12 +3786,12 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "offsetY": 27.875,
-            "offsetX": 109.33333206176758
+            "offsetX": 109.33333206176758,
+            "offsetY": 27.875
         },
         {
             "type": "change",
-            "value": "850",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Advance / received now"
@@ -3715,7 +3806,7 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "target": "main"
+            "value": "850"
         },
         {
             "type": "click",
@@ -3734,12 +3825,12 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "offsetY": 30.541656494140625,
-            "offsetX": 166.33333206176758
+            "offsetX": 166.33333206176758,
+            "offsetY": 30.541656494140625
         },
         {
             "type": "change",
-            "value": "TEST ORDER 08",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Remarks"
@@ -3754,7 +3845,7 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "TEST ORDER 08"
         },
         {
             "type": "click",
@@ -3776,13 +3867,26 @@
                     "text/Save party order"
                 ]
             ],
-            "offsetY": 15.541656494140625,
-            "offsetX": 299.3333320617676
+            "offsetX": 299.3333320617676,
+            "offsetY": 15.541656494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "aria/Yes, save order",
+                "#root > div > div button.bg-blue-600",
+                "xpath///*[@id=\"root\"]/div/div/section/div/button[2]",
+                "pierce/#root > div > div button.bg-blue-600",
+                "text/Yes, save order"
+            ],
+            "offsetX": 72.29165649414062,
+            "offsetY": 12.974517822265625
         },
         {
             "type": "waitForExpression",
-            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''"
         },
         {
             "type": "click",
@@ -3801,12 +3905,12 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "offsetY": 27.333328247070312,
-            "offsetX": 91.66665649414062
+            "offsetX": 91.66665649414062,
+            "offsetY": 27.333328247070312
         },
         {
             "type": "change",
-            "value": "PIYUSH TEST 09",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer name *"
@@ -3821,7 +3925,7 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "target": "main"
+            "value": "PIYUSH TEST 09"
         },
         {
             "type": "click",
@@ -3840,12 +3944,12 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "offsetY": 26,
-            "offsetX": 254.33333206176758
+            "offsetX": 254.33333206176758,
+            "offsetY": 26
         },
         {
             "type": "change",
-            "value": "9000000009",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Mobile *"
@@ -3860,7 +3964,7 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "target": "main"
+            "value": "9000000009"
         },
         {
             "type": "click",
@@ -3879,12 +3983,12 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "offsetY": 20,
-            "offsetX": 121.66665649414062
+            "offsetX": 121.66665649414062,
+            "offsetY": 20
         },
         {
             "type": "change",
-            "value": "DEWAS TEST 09",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer address"
@@ -3899,7 +4003,7 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "target": "main"
+            "value": "DEWAS TEST 09"
         },
         {
             "type": "click",
@@ -3918,12 +4022,12 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "offsetY": 8.666656494140625,
-            "offsetX": 142.33333206176758
+            "offsetX": 142.33333206176758,
+            "offsetY": 8.666656494140625
         },
         {
             "type": "change",
-            "value": "TEST PARTY 09",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Event name *"
@@ -3938,7 +4042,7 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "target": "main"
+            "value": "TEST PARTY 09"
         },
         {
             "type": "click",
@@ -3957,8 +4061,8 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "click",
@@ -3977,13 +4081,13 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-20'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-20'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-20'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-20'), 150); })"
         },
         {
             "type": "click",
@@ -4002,8 +4106,8 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 40,
-            "offsetX": 164.66665649414062
+            "offsetX": 164.66665649414062,
+            "offsetY": 40
         },
         {
             "type": "click",
@@ -4022,13 +4126,13 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 15,
-            "offsetX": 270.6666564941406
+            "offsetX": 270.6666564941406,
+            "offsetY": 15
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '20:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '20:00'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '20:00'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '20:00'), 150); })"
         },
         {
             "type": "click",
@@ -4047,12 +4151,12 @@
                     "text/Delivery address"
                 ]
             ],
-            "offsetY": 2.875,
-            "offsetX": 317.3333320617676
+            "offsetX": 317.3333320617676,
+            "offsetY": 2.875
         },
         {
             "type": "change",
-            "value": "YADAV MARRIGE GARDEN 09",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Delivery address"
@@ -4067,7 +4171,7 @@
                     "pierce/label:nth-of-type(9) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "YADAV MARRIGE GARDEN 09"
         },
         {
             "type": "click",
@@ -4086,12 +4190,12 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "offsetY": 28.541656494140625,
-            "offsetX": 157.33333206176758
+            "offsetX": 157.33333206176758,
+            "offsetY": 28.541656494140625
         },
         {
             "type": "change",
-            "value": "18",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Jar quantity"
@@ -4106,7 +4210,7 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "target": "main"
+            "value": "18"
         },
         {
             "type": "click",
@@ -4125,12 +4229,12 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "offsetY": 21.208328247070312,
-            "offsetX": 127.33333206176758
+            "offsetX": 127.33333206176758,
+            "offsetY": 21.208328247070312
         },
         {
             "type": "change",
-            "value": "26",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Water quantity (litres)"
@@ -4145,7 +4249,7 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "target": "main"
+            "value": "26"
         },
         {
             "type": "click",
@@ -4164,12 +4268,12 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "offsetY": 27.875,
-            "offsetX": 109.33333206176758
+            "offsetX": 109.33333206176758,
+            "offsetY": 27.875
         },
         {
             "type": "change",
-            "value": "900",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Advance / received now"
@@ -4184,7 +4288,7 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "target": "main"
+            "value": "900"
         },
         {
             "type": "click",
@@ -4203,12 +4307,12 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "offsetY": 30.541656494140625,
-            "offsetX": 166.33333206176758
+            "offsetX": 166.33333206176758,
+            "offsetY": 30.541656494140625
         },
         {
             "type": "change",
-            "value": "TEST ORDER 09",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Remarks"
@@ -4223,7 +4327,7 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "TEST ORDER 09"
         },
         {
             "type": "click",
@@ -4245,13 +4349,26 @@
                     "text/Save party order"
                 ]
             ],
-            "offsetY": 15.541656494140625,
-            "offsetX": 299.3333320617676
+            "offsetX": 299.3333320617676,
+            "offsetY": 15.541656494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "aria/Yes, save order",
+                "#root > div > div button.bg-blue-600",
+                "xpath///*[@id=\"root\"]/div/div/section/div/button[2]",
+                "pierce/#root > div > div button.bg-blue-600",
+                "text/Yes, save order"
+            ],
+            "offsetX": 72.29165649414062,
+            "offsetY": 12.974517822265625
         },
         {
             "type": "waitForExpression",
-            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "document.querySelector('label:nth-of-type(2) > input')?.value === ''"
         },
         {
             "type": "click",
@@ -4270,12 +4387,12 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "offsetY": 27.333328247070312,
-            "offsetX": 91.66665649414062
+            "offsetX": 91.66665649414062,
+            "offsetY": 27.333328247070312
         },
         {
             "type": "change",
-            "value": "PIYUSH TEST 10",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer name *"
@@ -4290,7 +4407,7 @@
                     "pierce/label:nth-of-type(2) > input"
                 ]
             ],
-            "target": "main"
+            "value": "PIYUSH TEST 10"
         },
         {
             "type": "click",
@@ -4309,12 +4426,12 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "offsetY": 26,
-            "offsetX": 254.33333206176758
+            "offsetX": 254.33333206176758,
+            "offsetY": 26
         },
         {
             "type": "change",
-            "value": "9000000010",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Mobile *"
@@ -4329,7 +4446,7 @@
                     "pierce/label:nth-of-type(3) > input"
                 ]
             ],
-            "target": "main"
+            "value": "9000000010"
         },
         {
             "type": "click",
@@ -4348,12 +4465,12 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "offsetY": 20,
-            "offsetX": 121.66665649414062
+            "offsetX": 121.66665649414062,
+            "offsetY": 20
         },
         {
             "type": "change",
-            "value": "DEWAS TEST 10",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Customer address"
@@ -4368,7 +4485,7 @@
                     "pierce/label:nth-of-type(4) > input"
                 ]
             ],
-            "target": "main"
+            "value": "DEWAS TEST 10"
         },
         {
             "type": "click",
@@ -4387,12 +4504,12 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "offsetY": 8.666656494140625,
-            "offsetX": 142.33333206176758
+            "offsetX": 142.33333206176758,
+            "offsetY": 8.666656494140625
         },
         {
             "type": "change",
-            "value": "TEST PARTY 10",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Event name *"
@@ -4407,7 +4524,7 @@
                     "pierce/label:nth-of-type(5) > input"
                 ]
             ],
-            "target": "main"
+            "value": "TEST PARTY 10"
         },
         {
             "type": "click",
@@ -4426,8 +4543,8 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "click",
@@ -4446,13 +4563,13 @@
                     "pierce/label:nth-of-type(6) > select"
                 ]
             ],
-            "offsetY": 14.333328247070312,
-            "offsetX": 153.66665649414062
+            "offsetX": 153.66665649414062,
+            "offsetY": 14.333328247070312
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-21'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-21'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"date\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '2026-12-21'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '2026-12-21'), 150); })"
         },
         {
             "type": "click",
@@ -4471,8 +4588,8 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 40,
-            "offsetX": 164.66665649414062
+            "offsetX": 164.66665649414062,
+            "offsetY": 40
         },
         {
             "type": "click",
@@ -4491,13 +4608,13 @@
                     "pierce/label:nth-of-type(8) > input"
                 ]
             ],
-            "offsetY": 15,
-            "offsetX": 270.6666564941406
+            "offsetX": 270.6666564941406,
+            "offsetY": 15
         },
         {
             "type": "waitForExpression",
-            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '20:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '20:30'), 150); })",
-            "timeout": 10000
+            "timeout": 10000,
+            "expression": "new Promise(resolve => { const el = document.querySelector('input[type=\"time\"]'); if (!el) { resolve(false); return; } const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set; setter.call(el, '20:30'); el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); setTimeout(() => resolve(el.value === '20:30'), 150); })"
         },
         {
             "type": "click",
@@ -4516,12 +4633,12 @@
                     "text/Delivery address"
                 ]
             ],
-            "offsetY": 2.875,
-            "offsetX": 317.3333320617676
+            "offsetX": 317.3333320617676,
+            "offsetY": 2.875
         },
         {
             "type": "change",
-            "value": "YADAV MARRIGE GARDEN 10",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Delivery address"
@@ -4536,7 +4653,7 @@
                     "pierce/label:nth-of-type(9) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "YADAV MARRIGE GARDEN 10"
         },
         {
             "type": "click",
@@ -4555,12 +4672,12 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "offsetY": 28.541656494140625,
-            "offsetX": 157.33333206176758
+            "offsetX": 157.33333206176758,
+            "offsetY": 28.541656494140625
         },
         {
             "type": "change",
-            "value": "19",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Jar quantity"
@@ -4575,7 +4692,7 @@
                     "pierce/label:nth-of-type(10) > input"
                 ]
             ],
-            "target": "main"
+            "value": "19"
         },
         {
             "type": "click",
@@ -4594,12 +4711,12 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "offsetY": 21.208328247070312,
-            "offsetX": 127.33333206176758
+            "offsetX": 127.33333206176758,
+            "offsetY": 21.208328247070312
         },
         {
             "type": "change",
-            "value": "28",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Water quantity (litres)"
@@ -4614,7 +4731,7 @@
                     "pierce/label:nth-of-type(12) > input"
                 ]
             ],
-            "target": "main"
+            "value": "28"
         },
         {
             "type": "click",
@@ -4633,12 +4750,12 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "offsetY": 27.875,
-            "offsetX": 109.33333206176758
+            "offsetX": 109.33333206176758,
+            "offsetY": 27.875
         },
         {
             "type": "change",
-            "value": "950",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Advance / received now"
@@ -4653,7 +4770,7 @@
                     "pierce/label:nth-of-type(14) > input"
                 ]
             ],
-            "target": "main"
+            "value": "950"
         },
         {
             "type": "click",
@@ -4672,12 +4789,12 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "offsetY": 30.541656494140625,
-            "offsetX": 166.33333206176758
+            "offsetX": 166.33333206176758,
+            "offsetY": 30.541656494140625
         },
         {
             "type": "change",
-            "value": "TEST ORDER 10",
+            "target": "main",
             "selectors": [
                 [
                     "aria/Remarks"
@@ -4692,7 +4809,7 @@
                     "pierce/label:nth-of-type(15) > textarea"
                 ]
             ],
-            "target": "main"
+            "value": "TEST ORDER 10"
         },
         {
             "type": "click",
@@ -4714,8 +4831,32 @@
                     "text/Save party order"
                 ]
             ],
-            "offsetY": 15.541656494140625,
-            "offsetX": 299.3333320617676
+            "offsetX": 299.3333320617676,
+            "offsetY": 15.541656494140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "aria/Yes, save order",
+                "#root > div > div button.bg-blue-600",
+                "xpath///*[@id=\"root\"]/div/div/section/div/button[2]",
+                "pierce/#root > div > div button.bg-blue-600",
+                "text/Yes, save order"
+            ],
+            "offsetX": 72.29165649414062,
+            "offsetY": 12.974517822265625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                "nav a:nth-of-type(4)",
+                "xpath///*[@id=\"root\"]/div/nav/div/a[1]/svg/rect[4]",
+                "pierce/div > nav rect:nth-of-type(4)"
+            ],
+            "offsetX": 3.9131927490234375,
+            "offsetY": -0.2415771484375
         }
     ]
 }
